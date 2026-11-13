@@ -1,0 +1,12 @@
+,mean_abs_shap
+vocabulary,3.9492965
+punctuation,1.9838581
+function words,1.7645643
+parts of speech,1.5951636
+LM: predictability (gpt2),1.42885
+sentence length/rhythm,0.60611343
+readability,0.58614385
+LM: coherence (MiniLM),0.44032216
+pronouns/contractions,0.3777375
+hedges/discourse markers,0.061534178
+syntax,0.010545673

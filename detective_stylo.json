@@ -1,0 +1,166 @@
+{
+  "tone": {
+    "classes": [
+      "academic",
+      "casual",
+      "formal",
+      "unstyled"
+    ],
+    "acc": 0.854955680902498,
+    "acc_ci": [
+      0.8437995575901156,
+      0.8656749155518518
+    ],
+    "macro_f1": 0.8029654926434875,
+    "chance_uniform": 0.25,
+    "chance_majority": 0.32473811442385175,
+    "per_generator_acc": {
+      "gpt-oss-120b": 0.782,
+      "claude-template": 0.991,
+      "qwen": 0.488,
+      "allam": 0.539,
+      "gemma": 0.711,
+      "gemini": 0.611
+    },
+    "confusion": [
+      [
+        1301,
+        6,
+        244,
+        19
+      ],
+      [
+        2,
+        1562,
+        12,
+        1
+      ],
+      [
+        292,
+        32,
+        1273,
+        15
+      ],
+      [
+        41,
+        2,
+        54,
+        108
+      ]
+    ]
+  },
+  "persona": {
+    "classes": [
+      "expert",
+      "non-native speaker",
+      "student",
+      "unstyled"
+    ],
+    "acc": 0.8648267526188558,
+    "acc_ci": [
+      0.8535521826925184,
+      0.8754035103328098
+    ],
+    "macro_f1": 0.8150248741795412,
+    "chance_uniform": 0.25,
+    "chance_majority": 0.31990330378726833,
+    "per_generator_acc": {
+      "gpt-oss-120b": 0.832,
+      "claude-template": 0.974,
+      "qwen": 0.523,
+      "allam": 0.425,
+      "gemma": 0.784,
+      "gemini": 0.571
+    },
+    "confusion": [
+      [
+        1425,
+        26,
+        122,
+        12
+      ],
+      [
+        46,
+        1457,
+        76,
+        7
+      ],
+      [
+        208,
+        64,
+        1296,
+        20
+      ],
+      [
+        28,
+        28,
+        34,
+        115
+      ]
+    ]
+  },
+  "evasion": {
+    "classes": [
+      "none",
+      "sound_human"
+    ],
+    "acc": 0.65290088638195,
+    "acc_ci": [
+      0.6432909524198017,
+      0.6638030485961584
+    ],
+    "macro_f1": 0.651388112030769,
+    "chance_uniform": 0.5,
+    "chance_majority": 0.5173247381144238,
+    "per_generator_acc": {
+      "gpt-oss-120b": 0.795,
+      "claude-template": 0.519,
+      "qwen": 0.767,
+      "allam": 0.632,
+      "gemma": 0.684,
+      "gemini": 0.674
+    },
+    "confusion": [
+      [
+        1784,
+        784
+      ],
+      [
+        939,
+        1457
+      ]
+    ]
+  },
+  "length": {
+    "classes": [
+      "concise",
+      "elaborate"
+    ],
+    "acc": 0.9932758982979617,
+    "acc_ci": [
+      0.9906170504786926,
+      0.9954954352107573
+    ],
+    "macro_f1": 0.9932740448656117,
+    "chance_uniform": 0.5,
+    "chance_majority": 0.5057785249001892,
+    "per_generator_acc": {
+      "gpt-oss-120b": 0.999,
+      "claude-template": 1.0,
+      "qwen": 0.825,
+      "allam": 0.888,
+      "gemma": 0.969,
+      "gemini": 0.978
+    },
+    "confusion": [
+      [
+        2324,
+        28
+      ],
+      [
+        4,
+        2403
+      ]
+    ]
+  }
+}

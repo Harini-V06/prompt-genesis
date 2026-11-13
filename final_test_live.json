@@ -1,0 +1,305 @@
+{
+ "realchat_chatgpt": {
+  "n": 15,
+  "acc": 1.0,
+  "acc_ci": [
+   0.7961107336956521,
+   1.0
+  ],
+  "answered": 0.9333333333333333,
+  "acc_answered": 1.0,
+  "acc_answered_ci": [
+   0.7846829880728186,
+   1.0
+  ],
+  "mean_p_ai": 0.9864983462684612,
+  "invalid_inputs": 0,
+  "by_generator": {
+   "chatgpt": 1.0
+  },
+  "essays": [
+   {
+    "prompt_id": 1,
+    "p_ai": 0.9840848806366048,
+    "verdict": "AI",
+    "settings": {
+     "tone": "formal",
+     "persona": "non-native speaker",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about time, homework, children, activities. Use a formal tone. Write as a non-native English speaker would. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 2,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "unstyled",
+     "persona": "unstyled",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about teenagers, sleep, social, social media. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 3,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "unstyled",
+     "persona": "unstyled",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about libraries, people, public, public libraries. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 4,
+    "p_ai": 0.8518518518518519,
+    "verdict": "insufficient evidence",
+    "settings": {},
+    "prompt": null
+   },
+   {
+    "prompt_id": 5,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "unstyled",
+     "persona": "unstyled",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about games, video, video games, players. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 6,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "formal",
+     "persona": "non-native speaker",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about volunteering, help, teaches, helping. Use a formal tone. Write as a non-native English speaker would. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 7,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "formal",
+     "persona": "non-native speaker",
+     "evasion": "none",
+     "length": "elaborate"
+    },
+    "prompt": "Write an essay about zoos, animals, people, make. Use a formal tone. Write as a non-native English speaker would. Aim for about 500 words."
+   },
+   {
+    "prompt_id": 8,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "unstyled",
+     "persona": "unstyled",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about language, learning, new, people. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 9,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "unstyled",
+     "persona": "non-native speaker",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about clothes, fashion, fast, fast fashion. Write as a non-native English speaker would. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 10,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "formal",
+     "persona": "non-native speaker",
+     "evasion": "none",
+     "length": "elaborate"
+    },
+    "prompt": "Write an essay about exam, time, difficult, experience. Use a formal tone. Write as a non-native English speaker would. Aim for about 500 words."
+   },
+   {
+    "prompt_id": 11,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "formal",
+     "persona": "non-native speaker",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about students, uniforms, school, wear. Use a formal tone. Write as a non-native English speaker would. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 12,
+    "p_ai": 0.9615384615384616,
+    "verdict": "AI",
+    "settings": {
+     "tone": "formal",
+     "persona": "non-native speaker",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about students, ai, use, disadvantages. Use a formal tone. Write as a non-native English speaker would. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 13,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "unstyled",
+     "persona": "non-native speaker",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about students, cycling, walking, walking cycling. Write as a non-native English speaker would. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 14,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "unstyled",
+     "persona": "unstyled",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about space, exploration, space exploration, earth. Keep it to about 200 words."
+   },
+   {
+    "prompt_id": 15,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "formal",
+     "persona": "non-native speaker",
+     "evasion": "none",
+     "length": "concise"
+    },
+    "prompt": "Write an essay about teacher, students, good teacher, good. Use a formal tone. Write as a non-native English speaker would. Keep it to about 200 words."
+   }
+  ]
+ },
+ "realchat_claude": {
+  "n": 8,
+  "acc": 1.0,
+  "acc_ci": [
+   0.6755843804891231,
+   1.0
+  ],
+  "answered": 0.75,
+  "acc_answered": 1.0,
+  "acc_answered_ci": [
+   0.6096569663469354,
+   0.9999999999999999
+  ],
+  "mean_p_ai": 0.9321947942637598,
+  "invalid_inputs": 0,
+  "by_generator": {
+   "claude": 1.0
+  },
+  "essays": [
+   {
+    "prompt_id": 1,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "casual",
+     "persona": "non-native speaker",
+     "evasion": "sound_human",
+     "length": "elaborate"
+    },
+    "prompt": "Write an essay about homework, time, children, child. Use a casual tone. Write as a non-native English speaker would. Aim for about 500 words."
+   },
+   {
+    "prompt_id": 2,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "casual",
+     "persona": "non-native speaker",
+     "evasion": "sound_human",
+     "length": "elaborate"
+    },
+    "prompt": "Write an essay about sleep, social, social media, media. Use a casual tone. Write as a non-native English speaker would. Make it sound like a human wrote it, not an AI. Aim for about 500 words."
+   },
+   {
+    "prompt_id": 3,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "casual",
+     "persona": "non-native speaker",
+     "evasion": "sound_human",
+     "length": "elaborate"
+    },
+    "prompt": "Write an essay about libraries, public, serve, city. Use a casual tone. Write as a non-native English speaker would. Aim for about 500 words."
+   },
+   {
+    "prompt_id": 4,
+    "p_ai": 0.8518518518518519,
+    "verdict": "insufficient evidence",
+    "settings": {},
+    "prompt": null
+   },
+   {
+    "prompt_id": 5,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "casual",
+     "persona": "non-native speaker",
+     "evasion": "sound_human",
+     "length": "elaborate"
+    },
+    "prompt": "Write an essay about games, game, players, player. Use a casual tone. Write as a non-native English speaker would. Make it sound like a human wrote it, not an AI. Aim for about 500 words."
+   },
+   {
+    "prompt_id": 7,
+    "p_ai": 1.0,
+    "verdict": "AI",
+    "settings": {
+     "tone": "casual",
+     "persona": "expert",
+     "evasion": "sound_human",
+     "length": "elaborate"
+    },
+    "prompt": "Write an essay about zoos, zoo, animal, animals. Use a casual tone. Write as an expert on the subject. Aim for about 500 words."
+   },
+   {
+    "prompt_id": 8,
+    "p_ai": 0.9840848806366048,
+    "verdict": "AI",
+    "settings": {
+     "tone": "casual",
+     "persona": "non-native speaker",
+     "evasion": "none",
+     "length": "elaborate"
+    },
+    "prompt": "Write an essay about benefit, language, second, human. Use a casual tone. Write as a non-native English speaker would. Aim for about 500 words."
+   },
+   {
+    "prompt_id": 9,
+    "p_ai": 0.6216216216216216,
+    "verdict": "insufficient evidence",
+    "settings": {},
+    "prompt": null
+   }
+  ]
+ }
+}

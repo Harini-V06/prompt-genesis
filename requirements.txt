@@ -1,0 +1,23 @@
+# App runtime (Streamlit Community Cloud / local). Versions pinned to the ones the models
+# were trained with: joblib-pickled LightGBM/XGBoost/isotonic models need matching versions.
+# CPU-only PyTorch keeps the install small (no CUDA libraries) and RAM well under 2.7 GB.
+--extra-index-url https://download.pytorch.org/whl/cpu
+streamlit==1.66.1
+pandas==3.0.5
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+xgboost==3.4.1
+lightgbm==4.7.0
+joblib==1.6.0
+pyarrow==26.0.1
+shap==0.54.1
+spacy==3.8.18
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+textstat==0.7.13
+rouge-score
+torch==2.15.0
+transformers==5.22.1
+sentence-transformers==6.2.0
+openai==3.46.0
+python-dotenv==1.2.3

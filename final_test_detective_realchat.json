@@ -1,0 +1,26 @@
+{
+ "realchat_chatgpt_tone": {
+  "correct": 6,
+  "n": 14
+ },
+ "realchat_chatgpt_persona": {
+  "correct": 5,
+  "n": 14
+ },
+ "realchat_chatgpt_evasion": {
+  "correct": 13,
+  "n": 14
+ },
+ "realchat_claude_tone": {
+  "correct": 0,
+  "n": 6
+ },
+ "realchat_claude_persona": {
+  "correct": 0,
+  "n": 6
+ },
+ "realchat_claude_evasion": {
+  "correct": 1,
+  "n": 6
+ }
+}

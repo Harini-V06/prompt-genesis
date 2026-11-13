@@ -1,0 +1,31 @@
+setting,feature,level_a,level_b,p,p_bh
+tone,second_person_rate,academic,casual,5.251608474957365e-176,1.7505361583191218e-175
+tone,second_person_rate,academic,formal,0.01283410513383415,0.013276660483276708
+tone,second_person_rate,casual,formal,5.466149868094468e-173,1.6398449604283405e-172
+tone,gunning_fog,academic,casual,3.2790863430592847e-220,4.9186295145889273e-219
+tone,gunning_fog,academic,formal,3.8330594494914345e-36,5.226899249306502e-36
+tone,gunning_fog,casual,formal,1.5132422559276298e-196,7.5662112796381485e-196
+tone,flesch_ease,academic,casual,5.532390130220689e-221,1.6597170390662066e-219
+tone,flesch_ease,academic,formal,4.75227668404236e-35,5.940345855052949e-35
+tone,flesch_ease,casual,formal,1.4382910445994367e-195,6.1641044768547284e-195
+tone,fk_grade,academic,casual,3.6485255873526e-219,3.6485255873526e-218
+tone,fk_grade,academic,formal,1.0436999778706665e-35,1.3613477972226084e-35
+tone,fk_grade,casual,formal,6.951836914826012e-197,4.171102148895607e-196
+tone,long_word_share,academic,casual,8.938641303683453e-219,6.70398097776259e-218
+tone,long_word_share,academic,formal,2.2680850293672796e-30,2.7217020352407353e-30
+tone,long_word_share,casual,formal,2.124195547985521e-182,7.965733304945704e-182
+persona,mtld,expert,non-native speaker,2.6003788465746417e-120,7.091942308839932e-120
+persona,mtld,expert,student,7.082803836042375e-26,8.172465964664279e-26
+persona,mtld,non-native speaker,student,1.92091934341133e-68,3.6017237688962435e-68
+persona,fw_is,expert,non-native speaker,7.369864371264617e-99,1.700737931830296e-98
+persona,fw_is,expert,student,0.0008348723561426883,0.0008945060958671661
+persona,fw_is,non-native speaker,student,1.9329588628436724e-78,3.865917725687345e-78
+persona,p_intraword_hyphen,expert,non-native speaker,4.543946455305677e-103,1.1359866138264192e-102
+persona,p_intraword_hyphen,expert,student,7.203352250981258e-37,1.0290503215687512e-36
+persona,p_intraword_hyphen,non-native speaker,student,2.2173019591394158e-38,3.325952938709124e-38
+persona,pos_aux,expert,non-native speaker,3.186398682930411e-92,6.827997177708023e-92
+persona,pos_aux,expert,student,2.517168703423141e-17,2.796854114914601e-17
+persona,pos_aux,non-native speaker,student,2.356853817187146e-40,3.721348132400757e-40
+persona,contraction_rate,expert,non-native speaker,1.2791469542280029e-53,2.131911590380005e-53
+persona,contraction_rate,expert,student,0.5142820267617022,0.5142820267617022
+persona,contraction_rate,non-native speaker,student,3.542794982703644e-64,6.251991145947607e-64

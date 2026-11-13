@@ -1,0 +1,11 @@
+.env
+data/
+artifacts/*.parquet
+artifacts/*.npz
+artifacts/cache/
+__pycache__/
+*.pyc
+teacher_sim/
+artifacts/pre_clean/
+artifacts/*.npy
+deploy/

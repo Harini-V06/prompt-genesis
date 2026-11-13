@@ -1,0 +1,452 @@
+{
+ "AI: Gemini, plain prompt": {
+  "text": "In the wake of World War II, Europe lay in ruins, with millions displaced and critical infrastructure shattered. Amid this devastation, agriculture had ground to a halt, leaving nations on the brink of starvation. In response to this crisis, the United Nations Relief and Rehabilitation Administration partnered with the Heifer Project to launch the Seagoing Cowboys. Between 1945 and 1947, thousands of men and boys stepped forward to serve on cattle ships, delivering hope across the Atlantic.\n\nJoining this program meant facing physically grueling, week-long voyages. These volunteers, who ranged from farmers to teachers, shoveled manure, hauled heavy feed, and cared for sea-sick livestock in rough ocean waters. Yet the labor was fueled by profound empathy. Upon reaching war-torn ports, the cows, horses, and mules they delivered were not just commodities; they provided milk for malnourished children, plowing power for barren fields, and the foundation for families to rebuild their livelihoods.\n\nChoosing to become a Seagoing Cowboy demonstrated that lasting peace is forged through service. In an era darkened by conflict, their quiet, selfless compassion restored more than just agriculture\u2014it restored human dignity.",
+  "truth": "AI (gemini) | true prompt: Write a short essay discussing joining the Seagoing Cowboys program to help after World War II. Aim for about 180 words.",
+  "analysis": {
+   "verdict": "AI",
+   "p_ai": 0.9840848806366048,
+   "p_ai_uncalibrated": 0.9659733176231384,
+   "band": 0.46017699115044247,
+   "confidence": 0.9840848806366048,
+   "n_words": 184,
+   "reasons": [
+    {
+     "feature": "mtld",
+     "label": "vocabulary variety",
+     "toward": "AI",
+     "sentence": "The text uses a wider, more varied vocabulary.",
+     "value": 222.86046511627913,
+     "median": 100.22417697191148,
+     "shap": 3.264488935470581
+    },
+    {
+     "feature": "word_len_mean",
+     "label": "word length",
+     "toward": "AI",
+     "sentence": "The text uses longer words on average.",
+     "value": 5.421621621621622,
+     "median": 4.7272727272727275,
+     "shap": 1.2578234672546387
+    },
+    {
+     "feature": "p_comma",
+     "label": "commas",
+     "toward": "AI",
+     "sentence": "The text uses many commas.",
+     "value": 10.81081081081081,
+     "median": 5.521472392638037,
+     "shap": 1.1123058795928955
+    },
+    {
+     "feature": "lm_binoculars",
+     "label": "Binoculars score",
+     "toward": "human",
+     "sentence": "The text has a high Binoculars ratio (typical of people).",
+     "value": 0.9624704292056281,
+     "median": 0.9077280570195703,
+     "shap": -0.8978057503700256
+    }
+   ],
+   "settings": {
+    "tone": {
+     "value": "unstyled",
+     "prob": 0.945550799369812,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "academic": 0.013225845992565155,
+      "casual": 0.00666219275444746,
+      "formal": 0.0345611646771431,
+      "unstyled": 0.945550799369812
+     }
+    },
+    "persona": {
+     "value": "unstyled",
+     "prob": 0.9450306658642166,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "expert": 0.023597952100400714,
+      "non-native speaker": 0.004862465876077012,
+      "student": 0.026508916159305815,
+      "unstyled": 0.9450306658642166
+     }
+    },
+    "evasion": {
+     "value": "none",
+     "prob": 0.9778326749801636,
+     "confident": true,
+     "threshold": 0.66,
+     "all": {
+      "none": 0.9778326749801636,
+      "sound_human": 0.022167302668094635
+     }
+    },
+    "length": {
+     "value": "concise",
+     "prob": 0.999780500319405,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "concise": 0.999780500319405,
+      "elaborate": 0.00021949968059500622
+     }
+    }
+   },
+   "topic": "restored, seagoing, agriculture, nations",
+   "topic_source": "keywords",
+   "prompt": "Write an essay about restored, seagoing, agriculture, nations. Keep it to about 200 words.",
+   "unstyled": true
+  }
+ },
+ "AI: styled prompt (known settings)": {
+  "text": "The transition to distance learning has fundamentally altered the educational landscape, sparking an ongoing debate regarding its long-term efficacy. While the convenience of attending classes from home offers undeniable advantages, the impact on student development is deeply complex.\n\nOn one hand, distance learning fosters a level of autonomy and digital literacy that is increasingly essential in a remote-friendly workforce. The ability to manage one\u2019s own schedule and navigate various digital platforms prepares us for the modern professional world. For many, the flexibility of a home environment also reduces the stress of commuting and allows for a more personalized study space.\n\nHowever, these benefits must be weighed against the loss of the \"human element.\" Education is not merely the consumption of information; it is a social process. The lack of face-to-face interaction can lead to a sense of isolation and a diminished sense of community, which are vital for emotional and social growth. In the long run, over-reliance on virtual platforms might erode the soft skills\u2014such as spontaneous collaboration and interpersonal nuance\u2014that are difficult to replicate through a screen.",
+  "truth": "AI (gemma) | true prompt: Write an essay about whether students benefit from attending classes from home through distance learning. Keep the tone formal and measured. You are a student writing this for class. Avoid sounding like AI; make it read naturally human. Think about the long-term picture. Aim for about 200 words.",
+  "analysis": {
+   "verdict": "AI",
+   "p_ai": 1.0,
+   "p_ai_uncalibrated": 0.9998667240142822,
+   "band": 0.46017699115044247,
+   "confidence": 1.0,
+   "n_words": 180,
+   "reasons": [
+    {
+     "feature": "mtld",
+     "label": "vocabulary variety",
+     "toward": "AI",
+     "sentence": "The text uses a wider, more varied vocabulary.",
+     "value": 129.28400206090737,
+     "median": 100.22417697191148,
+     "shap": 2.3885226249694824
+    },
+    {
+     "feature": "word_len_mean",
+     "label": "word length",
+     "toward": "AI",
+     "sentence": "The text uses longer words on average.",
+     "value": 5.356756756756757,
+     "median": 4.7272727272727275,
+     "shap": 1.380391001701355
+    },
+    {
+     "feature": "flesch_ease",
+     "label": "readability",
+     "toward": "AI",
+     "sentence": "The text is harder to read.",
+     "value": 26.735000000000042,
+     "median": 53.204758158508184,
+     "shap": 1.0071380138397217
+    },
+    {
+     "feature": "fw_a",
+     "label": "use of 'a'",
+     "toward": "AI",
+     "sentence": "It uses the word 'a' more often than typical.",
+     "value": 4.324324324324325,
+     "median": 2.956989247311828,
+     "shap": 0.8125214576721191
+    }
+   ],
+   "settings": {
+    "tone": {
+     "value": "formal",
+     "prob": 0.9017184972763062,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "academic": 0.06378386169672012,
+      "casual": 0.00015752830950077623,
+      "formal": 0.9017184972763062,
+      "unstyled": 0.03434005752205849
+     }
+    },
+    "persona": {
+     "value": "student",
+     "prob": 0.875687431474313,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "expert": 0.059428011642288156,
+      "non-native speaker": 0.04013964966670558,
+      "student": 0.875687431474313,
+      "unstyled": 0.024744907216693222
+     }
+    },
+    "evasion": {
+     "value": "sound_human",
+     "prob": 0.9790200591087341,
+     "confident": true,
+     "threshold": 0.66,
+     "all": {
+      "none": 0.02097994089126587,
+      "sound_human": 0.9790200591087341
+     }
+    },
+    "length": {
+     "value": "concise",
+     "prob": 0.9999993374156921,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "concise": 0.9999993374156921,
+      "elaborate": 6.625843078202847e-07
+     }
+    }
+   },
+   "topic": "social, home, sense, face",
+   "topic_source": "keywords",
+   "prompt": "Write an essay about social, home, sense, face. Use a formal tone. Write it as a student. Make it sound like a human wrote it, not an AI. Keep it to about 200 words.",
+   "unstyled": false
+  }
+ },
+ "CONTROL: human student essay": {
+  "text": "Phones\n\nModern humans today are always on their phone. They are always on their phone more than 5 hours a day no stop .All they do is text back and forward and just have group Chats on social media. They even do it while driving. They are some really bad consequences when stuff happens when it comes to a phone. Some certain areas in the United States ban phones from class rooms just because of it.\n\nWhen people have phones, they know about certain apps that they have .Apps like Facebook Twitter Instagram and Snapchat. So like if a friend moves away and you want to be in contact you can still be in contact by posting videos or text messages. People always have different ways how to communicate with a phone. Phones have changed due to our generation.\n\nDriving is one of the way how to get around. People always be on their phones while doing it. Which can cause serious Problems. That's why there's a thing that's called no texting while driving. That's a really important thing to remember. Some people still do it because they think It's stupid. No matter what they do they still have to obey it because that's the only way how did he save.\n\nSometimes on the news there is either an accident or a suicide. It might involve someone not looking where they're going or tweet that someone sent. It either injury or death. If a mysterious number says I'm going to kill you and they know where you live but you don't know the person's contact ,It makes you puzzled and make you start to freak out. Which can end up really badly.\n\nPhones are fine to use and it's also the best way to come over help. If you go through a problem and you can't find help you ,always have a phone there with you. Even though phones are used almost every day as long as you're safe it would come into use if you get into trouble. Make sure you do not be like this phone while you're in the middle of driving. The news always updated when people do something stupid around that involves their phones. The safest way is the best way to stay safe.    ",
+  "truth": "human",
+  "analysis": {
+   "verdict": "human",
+   "p_ai": 0.0,
+   "p_ai_uncalibrated": 4.7586388973286375e-05,
+   "band": 0.46017699115044247,
+   "confidence": 1.0,
+   "n_words": 376,
+   "reasons": [
+    {
+     "feature": "p_comma",
+     "label": "commas",
+     "toward": "human",
+     "sentence": "The text uses few commas.",
+     "value": 0.7957559681697612,
+     "median": 5.521472392638037,
+     "shap": -2.058260202407837
+    },
+    {
+     "feature": "mtld",
+     "label": "vocabulary variety",
+     "toward": "human",
+     "sentence": "The text repeats a smaller set of words.",
+     "value": 87.10984848484848,
+     "median": 100.22417697191148,
+     "shap": -1.5848580598831177
+    },
+    {
+     "feature": "lm_binoculars",
+     "label": "Binoculars score",
+     "toward": "human",
+     "sentence": "The text has a high Binoculars ratio (typical of people).",
+     "value": 1.0491073555061654,
+     "median": 0.9077280570195703,
+     "shap": -1.1627180576324463
+    },
+    {
+     "feature": "fw_a",
+     "label": "use of 'a'",
+     "toward": "human",
+     "sentence": "It uses the word 'a' less often than typical.",
+     "value": 2.6525198938992043,
+     "median": 2.956989247311828,
+     "shap": -0.5388917922973633
+    }
+   ]
+  }
+ },
+ "AI: new-topic essay (out of distribution)": {
+  "text": "Universal Basic Income (UBI) often sounds like abstract economic theory, but its true impact is best understood through the mundane rhythms of daily existence. Imagine a world where the anxiety of a job interview is replaced by the quiet joy of deciding whether to actually pursue that career or take time to care for an aging parent.\n\nIn practice, UBI transforms the financial floor from a cliff edge into a safety net. Consider a single parent juggling shift work and childcare. Currently, every unexpected car repair or medical bill feels like a crisis, forcing difficult choices between food and maintenance. With a guaranteed monthly deposit, that bill becomes manageable. The parent isn\u2019t desperate; they are planning. This shift from survival to stability allows for genuine disengagement from predatory lending cycles and impulsive, costly decision-making.\n\nFurthermore, UBI changes how we perceive labor. It validates unpaid work\u2014the cooking, cleaning, and caregiving\u2014that currently holds little economic value despite being the backbone of society. A person might choose to study for a new certification not because they are starving for their next check, but because they want to grow. This reduces the \"rat race\" pressure, allowing individuals to negotiate fairer wages and working conditions, knowing their basic needs are met regardless of their employment status.\n\nCritics often worry about laziness, yet everyday life reveals that most people are driven by purpose, not just paycheck. With UBI, that purpose can be expressed more freely. We might see more small businesses, more community volunteering, and more time spent on hobbies that enrich our neighborhoods.\n\nUltimately, UBI is not just about money; it is about dignity. It removes the constant, low-grade stress of poverty from the background noise of life. It allows us to engage with the world not as survivors, but as participants, fostering a society where stability is a given, not a privilege. By anchoring our baseline well-being, we unlock the potential for a more humane and creative way of living.",
+  "truth": "AI (qwen) | true prompt: Write an essay on universal basic income. Ground it in everyday life. Aim for about 250 words.",
+  "analysis": {
+   "verdict": "AI",
+   "p_ai": 1.0,
+   "p_ai_uncalibrated": 0.9998906850814819,
+   "band": 0.46017699115044247,
+   "confidence": 1.0,
+   "n_words": 328,
+   "reasons": [
+    {
+     "feature": "mtld",
+     "label": "vocabulary variety",
+     "toward": "AI",
+     "sentence": "The text uses a wider, more varied vocabulary.",
+     "value": 174.7426828235761,
+     "median": 100.22417697191148,
+     "shap": 3.674286127090454
+    },
+    {
+     "feature": "p_comma",
+     "label": "commas",
+     "toward": "AI",
+     "sentence": "The text uses many commas.",
+     "value": 7.552870090634441,
+     "median": 5.521472392638037,
+     "shap": 1.1332019567489624
+    },
+    {
+     "feature": "pos_aux",
+     "label": "helping verbs",
+     "toward": "AI",
+     "sentence": "It uses fewer helping verbs (is, was, have, can) than typical.",
+     "value": 0.0391644908616188,
+     "median": 0.0627177700348432,
+     "shap": 0.64845210313797
+    },
+    {
+     "feature": "p_semicolon",
+     "label": "semicolons",
+     "toward": "AI",
+     "sentence": "The text uses semicolons.",
+     "value": 0.6042296072507553,
+     "median": 0.0,
+     "shap": 0.6253179907798767
+    }
+   ],
+   "settings": {
+    "tone": {
+     "value": "formal",
+     "prob": 0.6027483344078064,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "academic": 0.25987133383750916,
+      "casual": 0.006362057290971279,
+      "formal": 0.6027483344078064,
+      "unstyled": 0.1310182809829712
+     }
+    },
+    "persona": {
+     "value": "student",
+     "prob": 0.5040555059574245,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "expert": 0.3561952566983232,
+      "non-native speaker": 0.12700174759146385,
+      "student": 0.5040555059574245,
+      "unstyled": 0.012747489752788261
+     }
+    },
+    "evasion": {
+     "value": "sound_human",
+     "prob": 0.9034948348999023,
+     "confident": true,
+     "threshold": 0.66,
+     "all": {
+      "none": 0.09650516510009766,
+      "sound_human": 0.9034948348999023
+     }
+    },
+    "length": {
+     "value": "elaborate",
+     "prob": 0.9588905738557779,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "concise": 0.04110942614422208,
+      "elaborate": 0.9588905738557779
+     }
+    }
+   },
+   "topic": "ubi, parent, purpose, just",
+   "topic_source": "keywords",
+   "prompt": "Write an essay about ubi, parent, purpose, just. Use a formal tone. Write it as a student. Make it sound like a human wrote it, not an AI. Aim for about 500 words.",
+   "unstyled": false
+  }
+ },
+ "AI: lightly edited to sound human": {
+  "text": "Exploring Venus should become a priority for the next generation of space missions, as the planet offers a unique laboratory for understanding planetary evolution and climate dynamics. Unlike Mars, which is cold and dry, Venus possesses a thick, carbon-dioxide-rich atmosphere with surface temperatures hot enough to melt lead. Studying these extreme conditions could reveal how greenhouse gases operate on a planetary scale. Moreover, the planet\u2019s geological features\u2014vast volcanic plains, tesserae highlands, and possible recent eruptions\u2014suggest that Venus is still geologically active. This challenges our current models of planetary cooling. If we can send landers or atmospheric probes capable of withstanding the pressure of over 90 bars, we will obtain direct measurements that no telescope can provide.\n\nCritics often argue that the cost is prohibitive, yet the technology developed for Venus missions can be repurposed for other deep-space endeavors, creating a broader scientific payoff. Additionally, the public\u2019s fascination with a \u201csister planet\u201d can inspire students to pursue STEM careers, much like the Apollo era did. Therefore, investing in Venus exploration is not merely an academic exercise; it is a strategic step toward protecting Earth\u2019s future and expanding humanity\u2019s reach.",
+  "truth": "AI (qwen) | true prompt: Lightly edit the following essay so it reads more naturally, the way a real person would revise their own draft. Keep most of it. Return only the edited essay.\n\nExploring Venus should become a priority for the next generation of space missions, because the planet offers a unique laboratory for understanding planetary evolution and climate dynamics. Unlike Mars, which is cold and dry, Venus possesses a thick, carbon\u2011dioxide\u2011rich atmosphere and surface temperatures hot enough to melt lead; studying these extreme conditions could reveal how greenhouse gases operate on a planetary scale. Moreover, the planet\u2019s geological features\u2014vast volcanic plains, tesserae highlands, and possible recent eruptions\u2014suggest that Venus is still geologically active, a fact that challenges our models of planetary cooling. If we can send landers or atmospheric probes capable of withstanding the pressure of over 90\u202fbars, we will obtain direct measurements that no telescope can provide. \n\nCritics often argue that the cost is prohibitive, yet the technology developed for Venus missions can be repurposed for other deep\u2011space endeavors, creating a broader scientific payoff. In addition, the public\u2019s fascination with a \u201csister planet\u201d can inspire students to pursue STEM careers, much like the Apollo era did. Therefore, investing in Venus exploration is not merely an academic exercise; it is a strategic step toward protecting Earth\u2019s future and expanding humanity\u2019s reach.",
+  "analysis": {
+   "verdict": "AI",
+   "p_ai": 1.0,
+   "p_ai_uncalibrated": 0.9999514818191528,
+   "band": 0.46017699115044247,
+   "confidence": 1.0,
+   "n_words": 190,
+   "reasons": [
+    {
+     "feature": "mtld",
+     "label": "vocabulary variety",
+     "toward": "AI",
+     "sentence": "The text uses a wider, more varied vocabulary.",
+     "value": 240.04465116279067,
+     "median": 100.22417697191148,
+     "shap": 2.916260004043579
+    },
+    {
+     "feature": "word_len_mean",
+     "label": "word length",
+     "toward": "AI",
+     "sentence": "The text uses longer words on average.",
+     "value": 5.630208333333333,
+     "median": 4.7272727272727275,
+     "shap": 1.2806721925735474
+    },
+    {
+     "feature": "p_comma",
+     "label": "commas",
+     "toward": "AI",
+     "sentence": "The text uses many commas.",
+     "value": 7.8125,
+     "median": 5.521472392638037,
+     "shap": 0.9915489554405212
+    },
+    {
+     "feature": "flesch_ease",
+     "label": "readability",
+     "toward": "AI",
+     "sentence": "The text is harder to read.",
+     "value": 24.221959064327507,
+     "median": 53.204758158508184,
+     "shap": 0.582984447479248
+    }
+   ],
+   "settings": {
+    "tone": {
+     "value": "academic",
+     "prob": 0.6642284393310547,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "academic": 0.6642284393310547,
+      "casual": 0.015714064240455627,
+      "formal": 0.3075937330722809,
+      "unstyled": 0.012463787570595741
+     }
+    },
+    "persona": {
+     "value": "student",
+     "prob": 0.8462785552278271,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "expert": 0.11077429869326381,
+      "non-native speaker": 0.03898953928004744,
+      "student": 0.8462785552278271,
+      "unstyled": 0.00395760679886155
+     }
+    },
+    "evasion": {
+     "value": "sound_human",
+     "prob": 0.9813728332519531,
+     "confident": true,
+     "threshold": 0.66,
+     "all": {
+      "none": 0.018627166748046875,
+      "sound_human": 0.9813728332519531
+     }
+    },
+    "length": {
+     "value": "concise",
+     "prob": 0.9999997248962178,
+     "confident": true,
+     "threshold": 0.34,
+     "all": {
+      "concise": 0.9999997248962178,
+      "elaborate": 2.7510378216972823e-07
+     }
+    }
+   },
+   "topic": "planetary, venus, planet, challenges",
+   "topic_source": "keywords",
+   "prompt": "Write an essay about planetary, venus, planet, challenges. Use a academic tone. Write it as a student. Make it sound like a human wrote it, not an AI. Keep it to about 200 words.",
+   "unstyled": false
+  }
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "ood_generated (new topics/genres)": {
+  "n": 311,
+  "acc": 0.9967845659163987,
+  "acc_ci": [
+   0.9820137221768206,
+   0.9994321858607453
+  ],
+  "answered": 0.9453376205787781,
+  "acc_answered": 1.0,
+  "acc_answered_ci": [
+   0.9871018689128719,
+   1.0
+  ],
+  "mean_p_ai": 0.9857532672467682,
+  "invalid_inputs": 0,
+  "missing_features_dropped": 0,
+  "by_generator": {
+   "allam": 1.0,
+   "gemini": 1.0,
+   "gemma": 0.9871794871794872,
+   "qwen": 1.0
+  }
+ },
+ "raw_llm (separate AI collection)": {
+  "n": 58,
+  "acc": 0.8275862068965517,
+  "acc_ci": [
+   0.7109149994332449,
+   0.9035581060491489
+  ],
+  "answered": 0.6724137931034483,
+  "acc_answered": 0.9743589743589743,
+  "acc_answered_ci": [
+   0.8681871352137286,
+   0.9954594139347627
+  ],
+  "mean_p_ai": 0.8141491644611116,
+  "invalid_inputs": 0,
+  "missing_features_dropped": 0,
+  "by_generator": {
+   "claude-freeform": 0.8275862068965517
+  }
+ }
+}

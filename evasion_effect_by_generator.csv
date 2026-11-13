@@ -1,0 +1,7 @@
+generator,n_sound_human,n_none,sig_features,of,max_abs_r,median_abs_r,n_medium_effect(|r|>=0.3),top_features
+qwen,22,18,0,91,0.5808080808080809,0.16161616161616155,31,"fw_of, pos_noun, word_len_mean"
+gemma,70,60,9,91,0.43952380952380943,0.1278571428571429,8,"lm_obs_entropy_mean, lm_perf_entropy_mean, lm_xent"
+gpt-oss-120b,1031,1009,69,91,0.33049883733113905,0.10234850458386635,3,"fw_and, emb_coh_adj_mean, hedge_rate"
+gemini,72,63,0,91,0.27469135802469147,0.05776014109347438,0,"fw_it, word_len_mean, long_word_share"
+allam,72,62,0,91,0.21012544802867383,0.05129928315412191,0,"emb_coh_adj_std, fw_by, pos_adp"
+claude-template,1075,1097,1,91,0.04393292489029266,0.007915880519810958,0,"p_paren, fw_this, fw_it"

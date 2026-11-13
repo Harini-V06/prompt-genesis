@@ -1,0 +1,170 @@
+{
+  "tone": {
+    "classes": [
+      "academic",
+      "casual",
+      "formal",
+      "unstyled"
+    ],
+    "acc": 0.8577018121911038,
+    "acc_ci": [
+      0.8470894136104035,
+      0.86897610122901
+    ],
+    "macro_f1": 0.8005758729402985,
+    "chance_uniform": 0.25,
+    "chance_majority": 0.3241350906095552,
+    "per_generator_acc": {
+      "gpt-oss-120b": 0.8,
+      "claude-template": 0.99,
+      "qwen": 0.488,
+      "allam": 0.549,
+      "gemma": 0.695,
+      "gemini": 0.583
+    },
+    "confusion": [
+      [
+        1287,
+        7,
+        234,
+        17
+      ],
+      [
+        2,
+        1514,
+        15,
+        1
+      ],
+      [
+        264,
+        34,
+        1263,
+        13
+      ],
+      [
+        47,
+        2,
+        55,
+        101
+      ]
+    ],
+    "chosen_per_fold": []
+  },
+  "persona": {
+    "classes": [
+      "expert",
+      "non-native speaker",
+      "student",
+      "unstyled"
+    ],
+    "acc": 0.8583196046128501,
+    "acc_ci": [
+      0.8466443310360561,
+      0.8697707573790152
+    ],
+    "macro_f1": 0.8096510380215454,
+    "chance_uniform": 0.25,
+    "chance_majority": 0.3200164744645799,
+    "per_generator_acc": {
+      "gpt-oss-120b": 0.832,
+      "claude-template": 0.962,
+      "qwen": 0.535,
+      "allam": 0.472,
+      "gemma": 0.742,
+      "gemini": 0.594
+    },
+    "confusion": [
+      [
+        1414,
+        21,
+        99,
+        9
+      ],
+      [
+        38,
+        1423,
+        86,
+        7
+      ],
+      [
+        217,
+        102,
+        1219,
+        16
+      ],
+      [
+        29,
+        25,
+        39,
+        112
+      ]
+    ],
+    "chosen_per_fold": []
+  },
+  "evasion": {
+    "classes": [
+      "none",
+      "sound_human"
+    ],
+    "acc": 0.6513591433278418,
+    "acc_ci": [
+      0.6412599156318213,
+      0.6622924739984699
+    ],
+    "macro_f1": 0.6492675311989777,
+    "chance_uniform": 0.5,
+    "chance_majority": 0.5177100494233937,
+    "per_generator_acc": {
+      "gpt-oss-120b": 0.775,
+      "claude-template": 0.518,
+      "qwen": 0.779,
+      "allam": 0.632,
+      "gemma": 0.774,
+      "gemini": 0.68
+    },
+    "confusion": [
+      [
+        1769,
+        745
+      ],
+      [
+        948,
+        1394
+      ]
+    ],
+    "chosen_per_fold": []
+  },
+  "length": {
+    "classes": [
+      "concise",
+      "elaborate"
+    ],
+    "acc": 0.9894646312620942,
+    "acc_ci": [
+      0.9856172575064525,
+      0.9928167956046654
+    ],
+    "macro_f1": 0.9894524589600968,
+    "chance_uniform": 0.5,
+    "chance_majority": 0.5164480756826489,
+    "per_generator_acc": {
+      "gpt-oss-120b": 0.998,
+      "claude-template": 0.993,
+      "qwen": 0.825,
+      "allam": 0.896,
+      "gemma": 0.977,
+      "gemini": 0.97
+    },
+    "confusion": [
+      [
+        2222,
+        27
+      ],
+      [
+        22,
+        2380
+      ]
+    ],
+    "chosen_per_fold": []
+  }
+}

@@ -1,0 +1,264 @@
+generator,topic,rows,clusters,frac_with_neardup
+allam,"""A Cowboy Who Rode the Waves""",14,14,0.0
+allam,Car-free cities,14,14,0.0
+allam,Cell phones at school,14,14,0.0
+allam,Community service,14,14,0.0
+allam,Distance learning,13,13,0.0
+allam,Does the electoral college work?,14,14,0.0
+allam,Driverless cars,13,13,0.0
+allam,Exploring Venus,13,13,0.0
+allam,Facial action coding system,12,12,0.0
+allam,Grades for extracurricular activities,12,12,0.0
+allam,Mandatory extracurricular activities,12,12,0.0
+allam,Phones and driving,12,12,0.0
+allam,Seeking multiple opinions,11,11,0.0
+allam,Summer projects,12,12,0.0
+allam,The Face on Mars,13,13,0.0
+allam,a concert you will never forget,3,3,0.0
+allam,a friendship that slowly faded,3,3,0.0
+allam,a long train journey,3,3,0.0
+allam,a story a grandparent told you,3,3,0.0
+allam,abolishing daylight saving time,3,3,0.0
+allam,animal testing for cosmetics,3,3,0.0
+allam,banning junk food advertising to children,3,3,0.0
+allam,building something with your own hands,3,3,0.0
+allam,compulsory voting,2,2,0.0
+allam,government subsidies for electric vehicles,3,3,0.0
+allam,how airplanes stay in the air,3,3,0.0
+allam,how antibiotics work,3,3,0.0
+allam,how batteries store energy,3,3,0.0
+allam,how data travels across the internet,3,3,0.0
+allam,how ocean tides work,3,3,0.0
+allam,how plastic recycling actually works,3,3,0.0
+allam,how the stock market works,3,3,0.0
+allam,learning to swim,3,3,0.0
+allam,losing something important,3,3,0.0
+allam,moving to a cashless society,3,3,0.0
+allam,nuclear power as a climate solution,3,3,0.0
+allam,open-plan offices,3,3,0.0
+allam,opt-out organ donation,3,3,0.0
+allam,overtourism in popular cities,2,2,0.0
+allam,paying college athletes,3,3,0.0
+allam,removing books from school libraries,3,3,0.0
+allam,school uniforms,3,3,0.0
+allam,screen time limits for young children,3,3,0.0
+allam,starting at a new school,3,3,0.0
+allam,tipping culture in restaurants,3,3,0.0
+allam,universal basic income,3,3,0.0
+allam,volunteering at a shelter,3,3,0.0
+allam,whether video games make players more aggressive,3,3,0.0
+allam,why earthquakes happen,3,3,0.0
+allam,why humans need sleep,3,3,0.0
+allam,why leaves change color in autumn,3,3,0.0
+allam,your first summer job,3,3,0.0
+claude-freeform,A city that surprised me,1,1,0.0
+claude-freeform,A hobby that calms me down,1,1,0.0
+claude-freeform,A lesson from a failed project,1,1,0.0
+claude-freeform,A lesson from a pet,1,1,0.0
+claude-freeform,A lesson from failure,1,1,0.0
+claude-freeform,A meal that means home,1,1,0.0
+claude-freeform,A mentor who shaped how I work,1,1,0.0
+claude-freeform,A piece of advice I ignored and regretted,1,1,0.0
+claude-freeform,A sport that taught me patience,1,1,0.0
+claude-freeform,A tradition my family keeps,1,1,0.0
+claude-freeform,AI tools in the classroom,1,1,0.0
+claude-freeform,Banning single-use plastic bags,1,1,0.0
+claude-freeform,Driverless cars and trust,1,1,0.0
+claude-freeform,Fast fashion and its real cost,1,1,0.0
+claude-freeform,Homework load in high school,1,1,0.0
+claude-freeform,How GPS finds your location,1,1,0.0
+claude-freeform,How a credit score actually works,1,1,0.0
+claude-freeform,How a rainbow forms,1,1,0.0
+claude-freeform,How a submarine dives and surfaces,1,1,0.0
+claude-freeform,How caffeine keeps you awake,1,1,0.0
+claude-freeform,How compound interest grows money,1,1,0.0
+claude-freeform,How noise-cancelling headphones work,1,1,0.0
+claude-freeform,How vaccines train the immune system,1,1,0.0
+claude-freeform,Learning a language later in life,1,1,0.0
+claude-freeform,Learning to cook from a parent,1,1,0.0
+claude-freeform,Lowering the voting age to sixteen,1,1,0.0
+claude-freeform,Minimum wage for teen workers,1,1,0.0
+claude-freeform,Public funding for space exploration,1,1,0.0
+claude-freeform,Recreational drone deliveries,1,1,0.0
+claude-freeform,Remote work versus the office,1,1,0.0
+claude-freeform,Self-checkout versus cashiers,1,1,0.0
+claude-freeform,Social media algorithms and teenagers,1,1,0.0
+claude-freeform,Standardized testing in college admissions,1,1,0.0
+claude-freeform,The best advice I ever got,1,1,0.0
+claude-freeform,The comfort of a particular meal,1,1,0.0
+claude-freeform,The first flight I ever took,1,1,0.0
+claude-freeform,The four-day work week,1,1,0.0
+claude-freeform,The ritual of my morning coffee,1,1,0.0
+claude-freeform,The smell of rain,1,1,0.0
+claude-freeform,The value of a good playlist,1,1,0.0
+claude-freeform,Urban farming in cities,1,1,0.0
+claude-freeform,Why I collect old maps,1,1,0.0
+claude-freeform,Why I keep old photographs,1,1,0.0
+claude-freeform,Why I love night drives,1,1,0.0
+claude-freeform,Why I still write letters,1,1,0.0
+claude-freeform,Why bananas go brown,1,1,0.0
+claude-freeform,Why boredom is underrated,1,1,0.0
+claude-freeform,Why bread rises,1,1,0.0
+claude-freeform,Why cats purr,1,1,0.0
+claude-freeform,Why ice floats,1,1,0.0
+claude-freeform,Why onions make you cry,1,1,0.0
+claude-freeform,Why silence is underrated,1,1,0.0
+claude-freeform,Why small rituals matter,1,1,0.0
+claude-freeform,Why the sky is blue,1,1,0.0
+claude-freeform,Why we get brain freeze,1,1,0.0
+claude-freeform,Why we yawn,1,1,0.0
+claude-freeform,Year-round school calendars,1,1,0.0
+claude-freeform,Zoos and animal welfare,1,1,0.0
+claude-template,"""A Cowboy Who Rode the Waves""",159,43,0.9748427672955975
+claude-template,Car-free cities,154,43,0.9805194805194806
+claude-template,Cell phones at school,157,49,0.9617834394904459
+claude-template,Community service,157,47,0.9554140127388535
+claude-template,Distance learning,150,44,0.9866666666666667
+claude-template,Does the electoral college work?,152,42,0.9868421052631579
+claude-template,Driverless cars,148,45,0.9864864864864865
+claude-template,Exploring Venus,154,48,0.961038961038961
+claude-template,Facial action coding system,144,36,1.0
+claude-template,Grades for extracurricular activities,152,44,0.9868421052631579
+claude-template,Mandatory extracurricular activities,154,48,0.9675324675324676
+claude-template,Phones and driving,144,39,1.0
+claude-template,Seeking multiple opinions,155,44,0.9806451612903225
+claude-template,Summer projects,152,43,0.993421052631579
+claude-template,The Face on Mars,148,40,0.9864864864864865
+gemini,"""A Cowboy Who Rode the Waves""",14,14,0.0
+gemini,Car-free cities,12,12,0.0
+gemini,Cell phones at school,12,12,0.0
+gemini,Community service,14,14,0.0
+gemini,Distance learning,14,14,0.0
+gemini,Does the electoral college work?,14,14,0.0
+gemini,Driverless cars,12,12,0.0
+gemini,Exploring Venus,11,11,0.0
+gemini,Facial action coding system,8,8,0.0
+gemini,Grades for extracurricular activities,8,8,0.0
+gemini,Mandatory extracurricular activities,9,9,0.0
+gemini,Phones and driving,12,12,0.0
+gemini,Seeking multiple opinions,10,10,0.0
+gemini,Summer projects,12,12,0.0
+gemini,The Face on Mars,13,13,0.0
+gemini,a concert you will never forget,3,3,0.0
+gemini,a friendship that slowly faded,3,3,0.0
+gemini,a long train journey,3,3,0.0
+gemini,a story a grandparent told you,3,3,0.0
+gemini,abolishing daylight saving time,3,3,0.0
+gemini,animal testing for cosmetics,3,3,0.0
+gemini,banning junk food advertising to children,3,3,0.0
+gemini,building something with your own hands,3,3,0.0
+gemini,compulsory voting,3,3,0.0
+gemini,government subsidies for electric vehicles,3,3,0.0
+gemini,how airplanes stay in the air,3,3,0.0
+gemini,how antibiotics work,3,3,0.0
+gemini,how batteries store energy,3,3,0.0
+gemini,how data travels across the internet,3,3,0.0
+gemini,how ocean tides work,3,3,0.0
+gemini,how plastic recycling actually works,3,3,0.0
+gemini,how the stock market works,3,3,0.0
+gemini,learning to swim,3,3,0.0
+gemini,losing something important,3,3,0.0
+gemini,moving to a cashless society,3,3,0.0
+gemini,nuclear power as a climate solution,3,3,0.0
+gemini,open-plan offices,3,3,0.0
+gemini,opt-out organ donation,3,3,0.0
+gemini,overtourism in popular cities,3,3,0.0
+gemini,paying college athletes,3,3,0.0
+gemini,removing books from school libraries,3,3,0.0
+gemini,school uniforms,3,3,0.0
+gemini,screen time limits for young children,3,3,0.0
+gemini,starting at a new school,3,3,0.0
+gemini,tipping culture in restaurants,3,3,0.0
+gemini,universal basic income,3,3,0.0
+gemini,volunteering at a shelter,3,3,0.0
+gemini,whether video games make players more aggressive,3,3,0.0
+gemini,why earthquakes happen,3,3,0.0
+gemini,why humans need sleep,3,3,0.0
+gemini,why leaves change color in autumn,3,3,0.0
+gemini,your first summer job,3,3,0.0
+gemma,"""A Cowboy Who Rode the Waves""",12,12,0.0
+gemma,Car-free cities,11,11,0.0
+gemma,Cell phones at school,12,12,0.0
+gemma,Community service,12,12,0.0
+gemma,Distance learning,13,13,0.0
+gemma,Does the electoral college work?,12,12,0.0
+gemma,Driverless cars,11,11,0.0
+gemma,Exploring Venus,13,13,0.0
+gemma,Facial action coding system,11,11,0.0
+gemma,Grades for extracurricular activities,10,10,0.0
+gemma,Mandatory extracurricular activities,11,11,0.0
+gemma,Phones and driving,10,10,0.0
+gemma,Seeking multiple opinions,10,10,0.0
+gemma,Summer projects,11,11,0.0
+gemma,The Face on Mars,9,9,0.0
+gemma,a concert you will never forget,1,1,0.0
+gemma,a friendship that slowly faded,3,3,0.0
+gemma,a long train journey,3,3,0.0
+gemma,a story a grandparent told you,1,1,0.0
+gemma,abolishing daylight saving time,2,2,0.0
+gemma,banning junk food advertising to children,2,2,0.0
+gemma,building something with your own hands,3,3,0.0
+gemma,compulsory voting,3,3,0.0
+gemma,government subsidies for electric vehicles,3,3,0.0
+gemma,how airplanes stay in the air,2,2,0.0
+gemma,how antibiotics work,1,1,0.0
+gemma,how batteries store energy,3,3,0.0
+gemma,how data travels across the internet,2,2,0.0
+gemma,how ocean tides work,2,2,0.0
+gemma,how plastic recycling actually works,3,3,0.0
+gemma,how the stock market works,3,3,0.0
+gemma,learning to swim,3,3,0.0
+gemma,losing something important,2,2,0.0
+gemma,moving to a cashless society,2,2,0.0
+gemma,nuclear power as a climate solution,2,2,0.0
+gemma,open-plan offices,3,3,0.0
+gemma,opt-out organ donation,2,2,0.0
+gemma,overtourism in popular cities,3,3,0.0
+gemma,paying college athletes,1,1,0.0
+gemma,removing books from school libraries,2,2,0.0
+gemma,school uniforms,1,1,0.0
+gemma,screen time limits for young children,2,2,0.0
+gemma,starting at a new school,2,2,0.0
+gemma,tipping culture in restaurants,3,3,0.0
+gemma,volunteering at a shelter,2,2,0.0
+gemma,whether video games make players more aggressive,3,3,0.0
+gemma,why earthquakes happen,2,2,0.0
+gemma,why humans need sleep,3,3,0.0
+gemma,why leaves change color in autumn,3,3,0.0
+gemma,your first summer job,3,3,0.0
+gpt-oss-120b,"""A Cowboy Who Rode the Waves""",273,273,0.0
+gpt-oss-120b,Car-free cities,134,134,0.0
+gpt-oss-120b,Cell phones at school,131,131,0.0
+gpt-oss-120b,Community service,131,131,0.0
+gpt-oss-120b,Distance learning,138,138,0.0
+gpt-oss-120b,Does the electoral college work?,136,136,0.0
+gpt-oss-120b,Driverless cars,140,140,0.0
+gpt-oss-120b,Exploring Venus,134,134,0.0
+gpt-oss-120b,Grades for extracurricular activities,136,136,0.0
+gpt-oss-120b,Mandatory extracurricular activities,134,134,0.0
+gpt-oss-120b,Seeking multiple opinions,277,277,0.0
+gpt-oss-120b,Summer projects,136,136,0.0
+gpt-oss-120b,The Face on Mars,140,140,0.0
+qwen,"""A Cowboy Who Rode the Waves""",12,12,0.0
+qwen,Car-free cities,12,12,0.0
+qwen,Cell phones at school,12,12,0.0
+qwen,Community service,14,14,0.0
+qwen,Distance learning,13,13,0.0
+qwen,Does the electoral college work?,11,11,0.0
+qwen,Driverless cars,9,9,0.0
+qwen,Exploring Venus,10,10,0.0
+qwen,Facial action coding system,10,10,0.0
+qwen,Grades for extracurricular activities,10,10,0.0
+qwen,Mandatory extracurricular activities,10,10,0.0
+qwen,Phones and driving,10,10,0.0
+qwen,Seeking multiple opinions,10,10,0.0
+qwen,Summer projects,11,11,0.0
+qwen,The Face on Mars,12,12,0.0
+qwen,abolishing daylight saving time,2,2,0.0
+qwen,compulsory voting,1,1,0.0
+qwen,moving to a cashless society,1,1,0.0
+qwen,nuclear power as a climate solution,1,1,0.0
+qwen,removing books from school libraries,2,2,0.0
+qwen,school uniforms,2,2,0.0
+qwen,universal basic income,3,3,0.0
+qwen,whether video games make players more aggressive,3,3,0.0

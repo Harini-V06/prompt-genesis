@@ -1,0 +1,5 @@
+train_on,test_on,acc,auc
+essay(all AI),qa,0.6399456521739131,0.7289170586454395
+qa,essay(all AI),0.8044444444444444,0.8884860576131686
+gpt-oss vs human-essay,claude-tmpl vs human-essay,0.968078381795196,0.9940852447173559
+claude-tmpl vs human-essay,gpt-oss vs human-essay,0.9216397099832683,0.977989168387069

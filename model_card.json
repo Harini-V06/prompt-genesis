@@ -1,0 +1,15 @@
+{
+ "AI vs human, AI model never seen in training (6 models held out in turn)": "97.3% accuracy [97.0, 97.6], AUC 0.998",
+ "AI vs human, essay topic never seen (15 topics held out in turn)": "98.7% accuracy [98.4, 99.0]",
+ "Calibration error (ECE, 0 = perfect)": "0.012",
+ "'Insufficient evidence' band": "P(AI) between 0.04 and 0.96: answers 90.2% of essays at 99.6% accuracy",
+ "Prompt settings (Detective, unseen topics)": {
+  "tone": "85.4% (confident on 100.0% at 85.4%)",
+  "persona": "86.2% (confident on 99.9% at 86.2%)",
+  "evasion": "65.2% (confident on 43.9% at 80.4%)",
+  "length": "98.8% (confident on 100.0% at 98.8%)"
+ },
+ "Verifier: true prompt beats a wrong prompt": "100.0% of 30 essays (Match 0.58 vs 0.37; p = 1.2e-09)",
+ "Non-native student essays wrongly flagged (TOEFL)": "26.4% [18.4, 36.3]; confidently 8.8% (n=91)",
+ "Adult professional writing wrongly flagged (OUT OF SCOPE)": "39.8% [36.1, 43.5]; confidently 19.0% (n=659)"
+}
