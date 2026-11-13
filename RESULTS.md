@@ -1,7 +1,23 @@
 # RESULTS — real numbers only
 
 Every figure below comes from a script that ran; source file in brackets.
-95% CIs are bootstrap (1,000 resamples; cluster bootstrap where near-duplicates exist).
+95% CIs are bootstrap (1,000 resamples; cluster bootstrap where near-duplicates exist) or Wilson for proportions.
+
+## Summary (deployed models; details and sources in sections 12-14)
+| | test | result |
+|---|---|---|
+| (a) | AI vs human, essay topic never seen (leave-one-prompt-out, 15 topics) | **98.7%** [98.4, 99.0], AUC 1.000 |
+| (b) | AI vs human, AI model never seen (leave-one-generator-out, 6 models) | **97.3%** [97.0, 97.6], AUC 0.998, ECE 0.012 |
+| (c) | out of distribution: 4 new families on new topics/genres (n=311) | **99.7%** [98.2, 99.9] |
+| (c) | out of distribution: separate free-form Claude collection (n=58) | 82.8% [71.1, 90.4] (weakest case) |
+| (d) | real chatbot apps, new topics, scored once: ChatGPT 15 + Claude 8 | **23/23 caught** (Wilson lower bounds 0.80 / 0.68) |
+| (d) | teacher_sim | not provided, not evaluated |
+| | abstention band P(AI) 0.04-0.96 | answers 90% of essays at 99.6% |
+| | Detective (API essays, unseen topics): tone / persona / evasion / length | 85.4% / 86.2% / 65.2% (80.4% when confident, 44%) / 98.8% |
+| | Detective on real chatbot apps | does NOT transfer (tone 6/14, persona 5/14 ChatGPT; 0/6 Claude) |
+| | Verifier: true prompt beats wrong prompt | 30/30 essays, p = 1.2e-9 |
+| | false alarms: native students / non-native (TOEFL) / adult prose | confidently flagged 0.0% / 8.8% / 19.0% |
+Live app: https://promptgenesis.streamlit.app
 
 ## 1. Leakage before vs after normalize()  [src/shortcut_probe.py, reports/shortcut_probe.csv]
 
@@ -78,10 +94,7 @@ acc 0.542 [0.535, 0.548], AUC 0.553, PR-AUC 0.566, ECE 0.381; abstention band ch
 ## 6. Fairness (prior model, to be redone)
 Old app model: 24/91 TOEFL non-native essays falsely flagged AI (26.4%) vs 3.9% for native human essays.
 
-## Pending
-LM/embedding features (running locally), gate rerun, final Guard with calibration plots and ablation,
-Detective with LM features, Verifier validity test, fairness audit + mitigation, error analysis,
-teacher_sim (once, at the end).
+(Sections 1-11 record the project's history in order; the final numbers are in sections 12-14 and the summary at the top.)
 
 ## 7. Gate rerun on the corrected pool (16,243 rows, all featurized)  [src/gate.py; reports/gate_*.log]
 
@@ -348,3 +361,15 @@ class "none". **The Detective does not transfer to consumer chatbot apps**: it l
 API generations with our own prompt templates, while the apps add hidden system prompts and personalisation that
 change the default voice. The Guard transfers (23/23 caught); the Detective's numbers in 12.2 hold only for
 API-generated essays. Future work: label essays collected from real chatbot apps.
+
+### 12.9 Feature ablation on the final setup (fixed config, clean data, leave-one-generator-out)  [reports/guard_logo_stylo_essay_fixed.log]
+| features | pooled LOGO acc | ECE | ALLaM | Claude tmpl | Gemini | Gemma | gpt-oss | Qwen |
+|---|---|---|---|---|---|---|---|---|
+| stylometric only (68) | 0.976 [0.973, 0.979] | 0.011 | 0.957 | 0.979 | 0.990 | 0.985 | 0.973 | 0.980 |
+| stylometric + LM (91, deployed) | 0.973 [0.970, 0.976] | 0.012 | 0.971 | 0.957 | 0.979 | 0.983 | 0.984 | 0.985 |
+| TF-IDF LR baseline | 0.914 | | 0.986 | 0.967 | 0.977 | 0.976 | 0.834 | 0.978 |
+On the clean 6-generator data the LM features add NOTHING overall (CIs overlap); they help ALLaM and gpt-oss and
+hurt the Claude template. Their earlier gain (section 7, +OOD) was measured on the smaller uncleaned data. By the
+"simpler model wins" rule the stylometric-only model would be preferred, and it would make the app far lighter
+(no PyTorch). We did NOT switch: the final one-shot tests (section 13) were run on the frozen stylo+LM model, and
+re-testing a new model on them would use the test sets twice. Recorded as the main future-work item.

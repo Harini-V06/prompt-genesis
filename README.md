@@ -13,6 +13,8 @@ from scratch.
 | **Detective** | Which prompt settings produced it (tone, persona, "sound human", length)? | one classifier per setting, confidence cut-off chosen on cross-validation |
 | **Verifier** | Is the reconstructed prompt any good? | regenerate the essay, Match Score (words + structure + ideas), placed between a wrong-prompt floor and a same-prompt ceiling |
 
+**Live app: https://promptgenesis.streamlit.app** (demo mode in the sidebar works without keys)
+
 Results, with confidence intervals and every number traceable to a script: **[RESULTS.md](RESULTS.md)**.
 Oral-exam preparation (why each design choice was made): **[VIVA.md](VIVA.md)**.
 Generated data documentation: **[docs/DATASET_CARD_generated.md](docs/DATASET_CARD_generated.md)**.
