@@ -5,6 +5,7 @@ on rate limits / overload. Reuses the generator's tested call + ranking logic.
 """
 import os
 import random
+import time
 
 import generate_groq as G
 
@@ -29,21 +30,37 @@ class LLM:
             for m in mids:
                 self.model_client[m] = c
         ranked = G.rank_models(ids)
-        self.models = [m for fam in FAMILY_PREFERENCE for m in ranked.get(fam, [])]
-        self.models += [m for fam, ms in ranked.items() if fam not in FAMILY_PREFERENCE for m in ms]
+        fams = [f for f in FAMILY_PREFERENCE if ranked.get(f)] + [f for f in ranked if f not in FAMILY_PREFERENCE and ranked[f]]
+        # round-robin across families: best model of EACH family first, so one provider's exhausted
+        # quota (e.g. every Gemini variant rate-limited) falls through to another provider quickly
+        depth = max((len(ranked[f]) for f in fams), default=0)
+        self.models = [ranked[f][i] for i in range(depth) for f in fams if i < len(ranked[f])]
         self.stats = {"n": 0, "in": 0, "out": 0}
+        self.dead = {}                    # model -> time it failed; retried after 10 minutes
         self.last_model = None
 
     @property
     def available(self):
         return bool(self.models)
 
-    def chat(self, prompt, max_tokens=1100, max_models=4):
-        for m in self.models[:max_models]:
-            text, _ = G.call(self.model_client[m], m, prompt, max_tokens, self.stats, lambda *_: None)
-            if text:
+    def chat(self, prompt, max_tokens=1100, max_models=6):
+        from build_corpus import clean_generated   # strip <thought> traces / cut-off tails, as in training data
+        tried = 0
+        for m in self.models:
+            if time.time() - self.dead.get(m, 0) < 600:   # failed recently (quota / errors): skip, stay fast
+                continue
+            if tried >= max_models:
+                break
+            tried += 1
+            try:
+                text, fin = G.call(self.model_client[m], m, prompt, max_tokens, self.stats, lambda *_: None)
+            except Exception:
+                continue
+            text = clean_generated(text, fin) if text else text
+            if text and len(text.split()) >= 3:
                 self.last_model = m
                 return text
+            self.dead[m] = time.time()
         return None
 
     def topic(self, text):
