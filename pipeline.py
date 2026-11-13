@@ -17,6 +17,9 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+_HERE = Path(__file__).resolve().parent
+# repository layout: <root>/src/*.py + <root>/artifacts/*; a flat upload (everything in one folder) also works
+ART = ROOT / "artifacts" if (ROOT / "artifacts").exists() else _HERE
 from normalize import normalize  # noqa: E402
 
 MIN_WORDS = 100
@@ -105,7 +108,7 @@ def validate(text):
 
 
 class Models:
-    def __init__(self, art=ROOT / "artifacts"):
+    def __init__(self, art=ART):
         from portable import load as pload    # XGBoost stored as portable JSON (see portable.py)
         g = pload(art / "guard_final.joblib")
         self.guard, self.iso, self.band, self.cols = g["model"], g["iso"], g["band"], g["features"]

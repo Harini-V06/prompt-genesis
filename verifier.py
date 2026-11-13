@@ -49,7 +49,9 @@ def _embedder():
 def _scaler():
     global _SCALER
     if _SCALER is None:
-        _SCALER = json.load(open(ROOT / "artifacts" / "stylo_scaler.json"))
+        p = ROOT / "artifacts" / "stylo_scaler.json"
+        p = p if p.exists() else Path(__file__).resolve().parent / "stylo_scaler.json"   # flat layout
+        _SCALER = json.load(open(p))
     return _SCALER
 
 

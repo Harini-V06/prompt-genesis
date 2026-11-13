@@ -15,7 +15,9 @@ from pathlib import Path
 import streamlit as st
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))            # flat layout (all files in one folder) also works
 sys.path.insert(0, str(ROOT / "src"))
+ART = ROOT / "artifacts" if (ROOT / "artifacts").exists() else ROOT
 
 st.set_page_config(page_title="Prompt Genesis", page_icon="P", layout="wide")
 
@@ -101,7 +103,7 @@ def load_llm(gemini_key, groq_key):
 
 @st.cache_data(show_spinner=False)
 def load_demo():
-    p = ROOT / "artifacts" / "demo_cache.json"
+    p = ART / "demo_cache.json"
     return json.load(open(p, encoding="utf-8")) if p.exists() else {}
 
 
@@ -289,7 +291,7 @@ elif page == "Verify":
                 render_verify(ss.verify, ss.text)
 
 else:
-    p = ROOT / "artifacts" / "model_card.json"
+    p = ART / "model_card.json"
     mc = json.load(open(p)) if p.exists() else {}
     st.markdown("### How it works")
     st.markdown(
