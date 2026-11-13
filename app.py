@@ -94,11 +94,16 @@ def load_models():
 
 
 @st.cache_resource(show_spinner=False)
-def load_llm(gemini_key, groq_key):
+def build_llm(gemini_key, groq_key):
     from llm import LLM
     keys = {"GEMINI_API_KEY": gemini_key, "GROQ_API_KEY": groq_key}
-    llm = LLM({k: v for k, v in keys.items() if v})
-    return llm if llm.available else None
+    return LLM({k: v for k, v in keys.items() if v})
+
+
+def load_llm(gemini_key, groq_key, _status=False):
+    """None when no usable model; _status=True returns the object anyway so the sidebar can say why."""
+    llm = build_llm(gemini_key, groq_key)
+    return llm if (llm.available or _status) else None
 
 
 @st.cache_data(show_spinner=False)
@@ -114,9 +119,13 @@ demo = load_demo()
 use_demo = st.sidebar.toggle("Demo mode (pre-run examples)", value=False,
                              help="Replays cached results: works without models or API keys.") if demo else False
 with st.sidebar.expander("API keys (for topic + regeneration)"):
-    gk = st.text_input("Gemini API key", type="password", value="") or secret("GEMINI_API_KEY")
-    qk = st.text_input("Groq API key", type="password", value="") or secret("GROQ_API_KEY")
+    gk = (st.text_input("Gemini API key", type="password", value="") or secret("GEMINI_API_KEY") or "").strip()
+    qk = (st.text_input("Groq API key", type="password", value="") or secret("GROQ_API_KEY") or "").strip()
     st.caption("Keys stay in this session only. Without a key, the topic comes from keywords and Verify is disabled.")
+    if gk or qk:
+        _l = load_llm(gk, qk, _status=True)
+        for k, v in (_l.providers.items() if _l else []):
+            st.caption(f"{'Gemini' if 'GEMINI' in k else 'Groq'}: {v}")
 
 st.markdown('<p class="wm">PROMPT<span class="b">GENESIS</span></p>'
             '<p class="tag">Was this essay written by a person or an AI? If AI, what prompt most likely produced it, '
@@ -287,6 +296,9 @@ elif page == "Verify":
                     except Exception as e:
                         ss.verify = {"error": f"Regeneration failed ({type(e).__name__}). Rate limits are common on free "
                                               "keys: wait a minute and try again."}
+            if ss.verify and "error" in ss.verify and llm:
+                with st.expander("Details (what the AI services answered)"):
+                    st.code("\n".join(llm.diagnostics()), language=None)
             if ss.verify:
                 render_verify(ss.verify, ss.text)
 

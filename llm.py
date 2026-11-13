@@ -17,6 +17,7 @@ class LLM:
         from openai import OpenAI
         keys = keys or {}
         self.model_client, ids = {}, []
+        self.providers, self.log = {}, []      # diagnostics shown in the app (never contains keys)
         for env, url in G.PROVIDERS.items():
             key = keys.get(env) or os.environ.get(env)
             if not key:
@@ -24,7 +25,9 @@ class LLM:
             c = OpenAI(base_url=url, api_key=key, timeout=90, max_retries=0)
             try:
                 mids = [m.id.replace("models/", "") for m in c.models.list().data]
-            except Exception:
+                self.providers[env] = f"ok ({len(mids)} models)"
+            except Exception as e:
+                self.providers[env] = f"key rejected or unreachable: {getattr(e, 'status_code', None) or type(e).__name__}"
                 continue
             ids += mids
             for m in mids:
@@ -53,15 +56,23 @@ class LLM:
                 break
             tried += 1
             try:
-                text, fin = G.call(self.model_client[m], m, prompt, max_tokens, self.stats, lambda *_: None)
-            except Exception:
+                text, fin = G.call(self.model_client[m], m, prompt, max_tokens, self.stats,
+                                   lambda msg: self.log.append(str(msg)[:160]))
+            except Exception as e:
+                self.log.append(f"[{m}] {type(e).__name__}"); self.dead[m] = time.time()
                 continue
             text = clean_generated(text, fin) if text else text
             if text and len(text.split()) >= 3:
                 self.last_model = m
                 return text
+            self.log.append(f"[{m}] no usable text ({fin})")
             self.dead[m] = time.time()
         return None
+
+    def diagnostics(self, n=8):
+        lines = [f"{k}: {v}" for k, v in self.providers.items()]
+        lines.append("models in use (first 6): " + ", ".join(self.models[:6]) if self.models else "no usable models")
+        return lines + self.log[-n:]
 
     def topic(self, text):
         out = self.chat("In 3 to 8 words, what is the topic of this essay? Reply with ONLY the topic phrase, "
