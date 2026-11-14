@@ -110,6 +110,14 @@ def load_llm(gemini_key, groq_key, _status=False):
     return llm if (llm.available or _status) else None
 
 
+@st.cache_data(show_spinner=False, max_entries=200)
+def analyze_cached(text, use_llm_topic, _gk, _qk):     # keys start with "_" so they are never hashed/stored
+    """Same essay (and same key setup) -> instant second time; results are deterministic except the LLM topic."""
+    import pipeline
+    llm = load_llm(_gk, _qk) if use_llm_topic else None
+    return pipeline.analyze(text, load_models(), topic_fn=llm.topic if llm else None)
+
+
 @st.cache_data(show_spinner=False)
 def load_demo():
     p = ART / "demo_cache.json"
@@ -263,9 +271,8 @@ if page == "Detect & Reconstruct":
                 with st.spinner("Loading models (first run can take a minute)..."):
                     models = load_models()
                 llm = load_llm(gk, qk) if (gk or qk) else None
-                with st.spinner("Reading the text..."):
-                    import pipeline
-                    ss.analysis = pipeline.analyze(ss.text, models, topic_fn=llm.topic if llm else None)
+                with st.spinner("Reading the text (about 10-30 s on the free server)..."):
+                    ss.analysis = analyze_cached(ss.text, bool(llm), gk, qk)
             except FileNotFoundError:
                 ss.analysis = {"error": "Model files are missing. Switch on demo mode, or run the training scripts."}
             except Exception as e:  # never show a raw traceback in a demo
@@ -301,7 +308,7 @@ elif page == "Verify":
             elif st.button("Regenerate x3 and score"):
                 import pipeline
                 from llm import wrong_prompt_for
-                with st.spinner("Asking the LLM to rewrite the essay 3 times, plus one wrong-prompt control..."):
+                with st.spinner("Asking the LLM for 3 rewrites + 1 wrong-prompt control, all at once (usually under a minute)..."):
                     try:
                         ss.verify = pipeline.verify(ss.text, a["prompt"], llm.chat, wrong_prompt_for(a["topic"]), n=3)
                     except Exception as e:

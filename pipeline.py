@@ -218,11 +218,14 @@ def keyword_topic(text, k=4):
 def verify(original, prompt, generate_fn, wrong_prompt, n=3):
     """generate_fn(prompt) -> text. Returns regenerations, per-run Match Scores, floor, ceiling, position."""
     from verifier import match_score, place
-    regens = [generate_fn(prompt) for _ in range(n)]
-    regens = [r for r in regens if r]
+    from concurrent.futures import ThreadPoolExecutor
+    # the n rewrites + the wrong-prompt control are independent: request them in parallel
+    with ThreadPoolExecutor(max_workers=n + 1) as ex:
+        futs = [ex.submit(generate_fn, prompt) for _ in range(n)] + [ex.submit(generate_fn, wrong_prompt)]
+        outs = [f.result() for f in futs]
+    regens, wrong = [r for r in outs[:n] if r], outs[n]
     if len(regens) < 2:
         return {"error": "The LLM did not return enough regenerations (rate limit?). Try again in a minute."}
-    wrong = generate_fn(wrong_prompt)
     scores = [match_score(original, r) for r in regens]
     floor = match_score(original, wrong)["match"] if wrong else None
     ceiling = match_score(regens[0], regens[1])["match"]
