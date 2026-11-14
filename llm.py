@@ -22,7 +22,7 @@ class LLM:
             key = keys.get(env) or os.environ.get(env)
             if not key:
                 continue
-            c = OpenAI(base_url=url, api_key=key, timeout=90, max_retries=0)
+            c = OpenAI(base_url=url, api_key=key, timeout=45, max_retries=0)
             try:
                 mids = [m.id.replace("models/", "") for m in c.models.list().data]
                 self.providers[env] = f"ok ({len(mids)} models)"
@@ -81,7 +81,8 @@ class LLM:
                         "the topic phrase, no quotes, no full stop.\n\n" + text[:3000], max_tokens=60)
         if not out:
             return None
-        return out.strip().strip('"').strip("'").rstrip(".").splitlines()[0][:80]
+        t = out.strip().strip('"').strip("'").rstrip(".").splitlines()[0][:80]
+        return tidy_topic(t)
 
 
 WRONG_PROMPTS = [
@@ -96,3 +97,15 @@ def wrong_prompt_for(topic, seed=0):
     rnd = random.Random(seed)
     options = [p for p in WRONG_PROMPTS if not any(w in p.lower() for w in str(topic).lower().split()[:2])]
     return rnd.choice(options or WRONG_PROMPTS)
+
+
+def tidy_topic(t):
+    """'Climate migration: A multidimensional challenge...' -> 'climate migration'.
+    Drop a title-style subtitle after a colon and lowercase the first word unless it is an acronym/name-like."""
+    t = t.lstrip("# ").strip()
+    if ":" in t and len(t.split(":")[0].split()) >= 2 and len(t.split(":", 1)[1].split()) >= 5:
+        t = t.split(":")[0].strip()
+    w = t.split(" ", 1)
+    if w and w[0][:1].isupper() and not w[0].isupper() and not (len(w[0]) > 1 and w[0][1:].lower() != w[0][1:]):
+        t = w[0][0].lower() + w[0][1:] + (" " + w[1] if len(w) > 1 else "")
+    return t

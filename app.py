@@ -111,11 +111,11 @@ def load_llm(gemini_key, groq_key, _status=False):
 
 
 @st.cache_data(show_spinner=False, max_entries=200)
-def analyze_cached(text, use_llm_topic, _gk, _qk):     # keys start with "_" so they are never hashed/stored
+def analyze_cached(text, use_llm_topic, _gk, _qk, force=False):     # keys start with "_" so they are never hashed/stored
     """Same essay (and same key setup) -> instant second time; results are deterministic except the LLM topic."""
     import pipeline
     llm = load_llm(_gk, _qk) if use_llm_topic else None
-    return pipeline.analyze(text, load_models(), topic_fn=llm.topic if llm else None)
+    return pipeline.analyze(text, load_models(), topic_fn=llm.topic if llm else None, force=force)
 
 
 @st.cache_data(show_spinner=False)
@@ -159,6 +159,16 @@ def pct(x):
 def render_verdict(a):
     p, band = a["p_ai"], a["band"]
     v = a["verdict"]
+    if v == "out of scope":
+        card("Verdict", '<p class="vt">Out of scope: no verdict</p>'
+             f'<p class="vs">This does not read like a student essay (scope check {a["scope"]["p_out"]:.0%} '
+             f'&gt; {a["scope"]["threshold"]:.0%}) &middot; {a["n_words"]} words</p>'
+             '<p class="small">Prompt Genesis was trained on school and university student essays. On other adult '
+             'writing (work reports, news, reviews, encyclopedia-style text) it wrongly flagged about 10% of genuinely '
+             'human texts as AI in our tests, so it gives no verdict here rather than risk a false accusation. The scope '
+             'check also refuses about 1% of school essays and 8% of university essays (see About the model).</p>',
+             "verdict unsure")
+        return
     if v == "AI":
         cls, title, sub = "", "Likely AI-generated", f"{pct(p)} probability of AI (calibrated)"
     elif v == "human":
@@ -258,9 +268,10 @@ if page == "Detect & Reconstruct":
     else:
         # bind to a fixed key: passing the stored text back as `value` makes Streamlit treat
         # every change as a NEW widget and silently drop what the user typed
-        st.caption("Built for **student essays** (100+ words, English). Not validated for professional or "
-                   "adult writing such as news or published articles: on those it raises false alarms "
-                   "(see About the model). A verdict is evidence, never proof.")
+        st.caption("Built for **student essays, school or university** (100+ words, English). Not validated for "
+                   "work reports, technical writing, news or published articles: on those it can raise false alarms, "
+                   "so it refuses text that does not look like a student essay (see About the model). "
+                   "A verdict is evidence, never proof.")
         st.text_area("Essay", key="essay_input", height=240,
                      placeholder="Paste an essay (at least 100 words, English)...")
         ss.text = ss.get("essay_input", "")
@@ -287,8 +298,21 @@ if page == "Detect & Reconstruct":
                 render_verdict(a)
                 render_prompt(a)
             with c2:
-                render_reasons(a)
+                if a["verdict"] != "out of scope":
+                    render_reasons(a)
+            if a["verdict"] == "out of scope":
+                if st.button("Show the detector's verdict anyway (unreliable for this kind of text)"):
+                    llm = load_llm(gk, qk) if (gk or qk) else None
+                    ss.analysis = analyze_cached(ss.text, bool(llm), gk, qk, force=True)
+                    st.rerun()
+            if a.get("scope", {}).get("out") and a["verdict"] != "out of scope":
+                st.error("You asked for this verdict although the scope check says this is NOT a student essay. "
+                         "Treat it as unreliable.")
             if a["verdict"] == "AI":
+                st.warning("A verdict is evidence, not proof. In our tests the model wrongly and confidently called "
+                           "**0 of 60** held-out university essays AI, but about **5%** of human texts in harder groups "
+                           "(non-native students' essays; adult writing that passed the scope check). "
+                           "Treat an AI verdict as a reason to talk to the writer, never as proof.")
                 st.info("Go to **Verify** to regenerate the essay from this prompt and score the match.")
 
 elif page == "Verify":

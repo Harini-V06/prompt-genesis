@@ -1,8 +1,10 @@
 {
- "AI vs human, AI model never seen in training (6 models held out in turn)": "97.3% accuracy [97.0, 97.6], AUC 0.998",
- "AI vs human, essay topic never seen (15 topics held out in turn)": "98.7% accuracy [98.4, 99.0]",
- "Calibration error (ECE, 0 = perfect)": "0.012",
- "'Insufficient evidence' band": "P(AI) between 0.04 and 0.96: answers 90.2% of essays at 99.6% accuracy",
+ "Model version": "v2 (14 Nov): trained on school essays (PERSUADE) + university essays (BAWE, 2000-2007) + AI essays from 6 model families",
+ "AI vs human, AI model never seen in training (6 models held out in turn)": "school essays 97.5% accuracy (AUC 0.995); university essays 91.1%",
+ "AI vs human, topic never seen (15 school topics + 4 university subject areas held out in turn)": "school 98.9%; university 91.8% (human 84.4%, AI 99.3%)",
+ "One-shot test: 60 human + 60 AI university essays, students never seen": "human essays: 31 called human, 0 called AI, 20 insufficient evidence, 9 out of scope | AI essays: 55 caught, 0 missed, 1 insufficient evidence, 4 out of scope",
+ "Real chatbot-app essays (ChatGPT, Claude, Grok)": "30 of 35 called AI, none called human; paraphrased (ZeroGPT) 11/12; humanized (StealthWriter) 7/12",
+ "'Insufficient evidence' band": "P(AI) between 0.05 and 0.95 (10% least-confident held-out predictions)",
  "Prompt settings (Detective, unseen topics)": {
   "tone": "85.4% (confident on 100.0% at 85.4%)",
   "persona": "86.2% (confident on 99.9% at 86.2%)",
@@ -10,6 +12,7 @@
   "length": "98.8% (confident on 100.0% at 98.8%)"
  },
  "Verifier: true prompt beats a wrong prompt": "100.0% of 30 essays (Match 0.58 vs 0.37; p = 1.2e-09)",
- "Non-native student essays wrongly flagged (TOEFL)": "26.4% [18.4, 36.3]; confidently 8.8% (n=91)",
- "Adult professional writing wrongly flagged (OUT OF SCOPE)": "39.8% [36.1, 43.5]; confidently 19.0% (n=659)"
+ "Non-native student essays (TOEFL, n=91) confidently called AI": "6.6% (was 8.8%); 5.5% after the scope check",
+ "Adult non-essay writing (n=659) confidently called AI": "9.6% (was 19.0%); 5.5% after the scope check",
+ "Scope check refuses": "school essays 0.6%, university essays 8.2%, non-native essays 15.4%"
 }

@@ -121,6 +121,15 @@ class Models:
         self.explainer = None
         med = art / "guard_feature_medians.json"
         self.medians = json.load(open(med)) if med.exists() else {}
+        sg = art / "scope_gate.json"          # "is this a student essay at all?" (src/scope_gate.py)
+        self.gate = json.load(open(sg)) if sg.exists() else None
+
+    def p_out_of_scope(self, F):
+        g = self.gate
+        x = np.array([F.iloc[0].get(c, np.nan) for c in g["features"]], dtype=float)
+        x = np.where(np.isnan(x), [g["medians"][c] for c in g["features"]], x)
+        z = (x - np.array(g["mean"])) / np.array(g["scale"])
+        return float(1 / (1 + np.exp(-(z @ np.array(g["coef"]) + g["intercept"]))))
 
     def shap_reasons(self, X, k=4):
         import shap
@@ -149,7 +158,8 @@ def featurize(texts, uses_lm=True):
     return F
 
 
-def analyze(raw_text, models, topic_fn=None):
+def analyze(raw_text, models, topic_fn=None, force=False):
+    """force=True: give the Guard's verdict even when the scope gate says the text is not a student essay."""
     err = validate(raw_text)
     if err:
         return {"error": err}
@@ -164,6 +174,15 @@ def analyze(raw_text, models, topic_fn=None):
         verdict = "AI" if p >= 0.5 else "human"
     out = {"verdict": verdict, "p_ai": p, "p_ai_uncalibrated": p_raw, "band": models.band,
            "confidence": max(p, 1 - p), "n_words": len(text.split()), "reasons": models.shap_reasons(X)}
+    if models.gate is not None:
+        po = models.p_out_of_scope(F)
+        out["scope"] = {"p_out": po, "threshold": models.gate["threshold"], "out": po > models.gate["threshold"]}
+        if out["scope"]["out"] and not force:
+            # not a student essay: the Guard is unreliable here (adult prose: 19% confident false alarms),
+            # so no verdict and no reconstruction. The Guard's number is kept only for the "show anyway" view.
+            out["guard_verdict"] = verdict
+            out["verdict"] = "out of scope"
+            return out
     if verdict == "AI" and models.det:
         settings = {}
         for lab, d in models.det.items():

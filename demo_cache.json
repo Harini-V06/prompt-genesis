@@ -4,10 +4,10 @@
   "truth": "AI (gemini) | true prompt: Write a short essay discussing joining the Seagoing Cowboys program to help after World War II. Aim for about 180 words.",
   "analysis": {
    "verdict": "AI",
-   "p_ai": 0.9840848806366048,
-   "p_ai_uncalibrated": 0.9659733176231384,
-   "band": 0.46017699115044247,
-   "confidence": 0.9840848806366048,
+   "p_ai": 0.9955056179775281,
+   "p_ai_uncalibrated": 0.9516394138336182,
+   "band": 0.44974874371859297,
+   "confidence": 0.9955056179775281,
    "n_words": 184,
    "reasons": [
     {
@@ -16,17 +16,8 @@
      "toward": "AI",
      "sentence": "The text uses a wider, more varied vocabulary.",
      "value": 222.86046511627913,
-     "median": 100.22417697191148,
-     "shap": 3.264488935470581
-    },
-    {
-     "feature": "word_len_mean",
-     "label": "word length",
-     "toward": "AI",
-     "sentence": "The text uses longer words on average.",
-     "value": 5.421621621621622,
-     "median": 4.7272727272727275,
-     "shap": 1.2578234672546387
+     "median": 98.70405401802378,
+     "shap": 2.9261345863342285
     },
     {
      "feature": "p_comma",
@@ -34,19 +25,33 @@
      "toward": "AI",
      "sentence": "The text uses many commas.",
      "value": 10.81081081081081,
-     "median": 5.521472392638037,
-     "shap": 1.1123058795928955
+     "median": 5.610391124409816,
+     "shap": 1.1426029205322266
     },
     {
-     "feature": "lm_binoculars",
-     "label": "Binoculars score",
+     "feature": "fw_to",
+     "label": "use of 'to'",
      "toward": "human",
-     "sentence": "The text has a high Binoculars ratio (typical of people).",
-     "value": 0.9624704292056281,
-     "median": 0.9077280570195703,
-     "shap": -0.8978057503700256
+     "sentence": "It uses the word 'to' more often than typical.",
+     "value": 3.783783783783784,
+     "median": 2.4691358024691357,
+     "shap": -0.8204464912414551
+    },
+    {
+     "feature": "pos_aux",
+     "label": "helping verbs",
+     "toward": "AI",
+     "sentence": "It uses fewer helping verbs (is, was, have, can) than typical.",
+     "value": 0.02262443438914027,
+     "median": 0.06132075471698113,
+     "shap": 0.7938796281814575
     }
    ],
+   "scope": {
+    "p_out": 0.04586600773309337,
+    "threshold": 0.9369431278753696,
+    "out": false
+   },
    "settings": {
     "tone": {
      "value": "unstyled",
@@ -93,9 +98,34 @@
      }
     }
    },
-   "topic": "restored, seagoing, agriculture, nations",
    "topic_source": "keywords",
-   "prompt": "Write an essay about restored, seagoing, agriculture, nations. Keep it to about 200 words.",
+   "topic": "World War II, agriculture, United Nations Relief Rehabilitation Administration",
+   "style": {
+    "n_words": 183,
+    "paragraphs": 3,
+    "sent_len": 18.3,
+    "grade": 11.536071038251368,
+    "title": false,
+    "first_person": 0.0,
+    "first_person_count": 0,
+    "first_plural": 0.0,
+    "second_person": 0.0,
+    "questions": 0,
+    "numbers": 2,
+    "contractions": 0.0,
+    "headings": 0,
+    "list_items": 0,
+    "em_dashes": 1
+   },
+   "style_clauses": [
+    "Write about 200 words in 3 paragraphs.",
+    "Keep sentences around 18 words on average.",
+    "Write at about a grade 12 reading level.",
+    "Do not use the first person.",
+    "Do not use contractions."
+   ],
+   "prompt_v1": "Write an essay about World War II, agriculture, United Nations Relief Rehabilitation Administration. Keep it to about 200 words.",
+   "prompt": "Write an essay about World War II, agriculture, United Nations Relief Rehabilitation Administration. Write about 200 words in 3 paragraphs. Keep sentences around 18 words on average. Write at about a grade 12 reading level. Do not use the first person. Do not use contractions.",
    "unstyled": true
   }
  },
@@ -105,8 +135,8 @@
   "analysis": {
    "verdict": "AI",
    "p_ai": 1.0,
-   "p_ai_uncalibrated": 0.9998667240142822,
-   "band": 0.46017699115044247,
+   "p_ai_uncalibrated": 0.9989596605300903,
+   "band": 0.44974874371859297,
    "confidence": 1.0,
    "n_words": 180,
    "reasons": [
@@ -116,26 +146,8 @@
      "toward": "AI",
      "sentence": "The text uses a wider, more varied vocabulary.",
      "value": 129.28400206090737,
-     "median": 100.22417697191148,
-     "shap": 2.3885226249694824
-    },
-    {
-     "feature": "word_len_mean",
-     "label": "word length",
-     "toward": "AI",
-     "sentence": "The text uses longer words on average.",
-     "value": 5.356756756756757,
-     "median": 4.7272727272727275,
-     "shap": 1.380391001701355
-    },
-    {
-     "feature": "flesch_ease",
-     "label": "readability",
-     "toward": "AI",
-     "sentence": "The text is harder to read.",
-     "value": 26.735000000000042,
-     "median": 53.204758158508184,
-     "shap": 1.0071380138397217
+     "median": 98.70405401802378,
+     "shap": 2.123988628387451
     },
     {
      "feature": "fw_a",
@@ -143,10 +155,33 @@
      "toward": "AI",
      "sentence": "It uses the word 'a' more often than typical.",
      "value": 4.324324324324325,
-     "median": 2.956989247311828,
-     "shap": 0.8125214576721191
+     "median": 2.8735632183908044,
+     "shap": 0.9549639225006104
+    },
+    {
+     "feature": "sent_burstiness",
+     "label": "rhythm",
+     "toward": "AI",
+     "sentence": "The text has an even, regular rhythm (typical of AI).",
+     "value": 0.25400025400038095,
+     "median": 0.36703918947720665,
+     "shap": 0.9319758415222168
+    },
+    {
+     "feature": "pos_adp",
+     "label": "prepositions",
+     "toward": "human",
+     "sentence": "It uses more prepositions (in, of, on) than typical.",
+     "value": 0.12380952380952381,
+     "median": 0.08992805755395683,
+     "shap": -0.8300715684890747
     }
    ],
+   "scope": {
+    "p_out": 0.6092851771741602,
+    "threshold": 0.9369431278753696,
+    "out": false
+   },
    "settings": {
     "tone": {
      "value": "formal",
@@ -193,9 +228,35 @@
      }
     }
    },
-   "topic": "social, home, sense, face",
    "topic_source": "keywords",
-   "prompt": "Write an essay about social, home, sense, face. Use a formal tone. Write it as a student. Make it sound like a human wrote it, not an AI. Keep it to about 200 words.",
+   "topic": "distance learning, long - term efficacy, remote - friendly workforce",
+   "style": {
+    "n_words": 178,
+    "paragraphs": 3,
+    "sent_len": 22.25,
+    "grade": 14.530074906367044,
+    "title": false,
+    "first_person": 0.0,
+    "first_person_count": 0,
+    "first_plural": 0.0056179775280898875,
+    "second_person": 0.0,
+    "questions": 0,
+    "numbers": 0,
+    "contractions": 0.0,
+    "headings": 0,
+    "list_items": 0,
+    "em_dashes": 2
+   },
+   "style_clauses": [
+    "Write about 200 words in 3 paragraphs.",
+    "Keep sentences around 22 words on average.",
+    "Write at a university reading level.",
+    "Do not use the first person.",
+    "Use a few em dashes (\u2014) for asides.",
+    "Do not use contractions."
+   ],
+   "prompt_v1": "Write an essay about distance learning, long - term efficacy, remote - friendly workforce. Use a formal tone. Write it as a student. Make it sound like a human wrote it, not an AI. Keep it to about 200 words.",
+   "prompt": "Write an essay about distance learning, long - term efficacy, remote - friendly workforce. Write about 200 words in 3 paragraphs. Keep sentences around 22 words on average. Write at a university reading level. Do not use the first person. Use a few em dashes (\u2014) for asides. Do not use contractions.",
    "unstyled": false
   }
  },
@@ -205,8 +266,8 @@
   "analysis": {
    "verdict": "human",
    "p_ai": 0.0,
-   "p_ai_uncalibrated": 4.7586388973286375e-05,
-   "band": 0.46017699115044247,
+   "p_ai_uncalibrated": 7.096178887877613e-05,
+   "band": 0.44974874371859297,
    "confidence": 1.0,
    "n_words": 376,
    "reasons": [
@@ -216,8 +277,8 @@
      "toward": "human",
      "sentence": "The text uses few commas.",
      "value": 0.7957559681697612,
-     "median": 5.521472392638037,
-     "shap": -2.058260202407837
+     "median": 5.610391124409816,
+     "shap": -2.328078031539917
     },
     {
      "feature": "mtld",
@@ -225,8 +286,8 @@
      "toward": "human",
      "sentence": "The text repeats a smaller set of words.",
      "value": 87.10984848484848,
-     "median": 100.22417697191148,
-     "shap": -1.5848580598831177
+     "median": 98.70405401802378,
+     "shap": -1.2537742853164673
     },
     {
      "feature": "lm_binoculars",
@@ -234,19 +295,24 @@
      "toward": "human",
      "sentence": "The text has a high Binoculars ratio (typical of people).",
      "value": 1.0491073555061654,
-     "median": 0.9077280570195703,
-     "shap": -1.1627180576324463
+     "median": 0.9051220882582378,
+     "shap": -1.1656547784805298
     },
     {
-     "feature": "fw_a",
-     "label": "use of 'a'",
-     "toward": "human",
-     "sentence": "It uses the word 'a' less often than typical.",
-     "value": 2.6525198938992043,
-     "median": 2.956989247311828,
-     "shap": -0.5388917922973633
+     "feature": "emb_coh_adj_mean",
+     "label": "sentence-to-sentence flow",
+     "toward": "AI",
+     "sentence": "The text jumps between ideas.",
+     "value": 0.2842969298362732,
+     "median": 0.38226813077926636,
+     "shap": 0.5077897906303406
     }
-   ]
+   ],
+   "scope": {
+    "p_out": 0.47312146792259063,
+    "threshold": 0.9369431278753696,
+    "out": false
+   }
   }
  },
  "AI: new-topic essay (out of distribution)": {
@@ -255,8 +321,8 @@
   "analysis": {
    "verdict": "AI",
    "p_ai": 1.0,
-   "p_ai_uncalibrated": 0.9998906850814819,
-   "band": 0.46017699115044247,
+   "p_ai_uncalibrated": 0.9999173879623413,
+   "band": 0.44974874371859297,
    "confidence": 1.0,
    "n_words": 328,
    "reasons": [
@@ -266,8 +332,8 @@
      "toward": "AI",
      "sentence": "The text uses a wider, more varied vocabulary.",
      "value": 174.7426828235761,
-     "median": 100.22417697191148,
-     "shap": 3.674286127090454
+     "median": 98.70405401802378,
+     "shap": 3.1891555786132812
     },
     {
      "feature": "p_comma",
@@ -275,28 +341,33 @@
      "toward": "AI",
      "sentence": "The text uses many commas.",
      "value": 7.552870090634441,
-     "median": 5.521472392638037,
-     "shap": 1.1332019567489624
+     "median": 5.610391124409816,
+     "shap": 1.5149810314178467
     },
     {
-     "feature": "pos_aux",
-     "label": "helping verbs",
+     "feature": "pos_num",
+     "label": "numbers",
      "toward": "AI",
-     "sentence": "It uses fewer helping verbs (is, was, have, can) than typical.",
-     "value": 0.0391644908616188,
-     "median": 0.0627177700348432,
-     "shap": 0.64845210313797
+     "sentence": "It uses fewer numbers than typical.",
+     "value": 0.0,
+     "median": 0.00390625,
+     "shap": 0.5916094779968262
     },
     {
-     "feature": "p_semicolon",
-     "label": "semicolons",
+     "feature": "fw_a",
+     "label": "use of 'a'",
      "toward": "AI",
-     "sentence": "The text uses semicolons.",
-     "value": 0.6042296072507553,
-     "median": 0.0,
-     "shap": 0.6253179907798767
+     "sentence": "It uses the word 'a' more often than typical.",
+     "value": 3.927492447129909,
+     "median": 2.8735632183908044,
+     "shap": 0.591065526008606
     }
    ],
+   "scope": {
+    "p_out": 0.03709853025058668,
+    "threshold": 0.9369431278753696,
+    "out": false
+   },
    "settings": {
     "tone": {
      "value": "formal",
@@ -343,9 +414,34 @@
      }
     }
    },
-   "topic": "ubi, parent, purpose, just",
    "topic_source": "keywords",
-   "prompt": "Write an essay about ubi, parent, purpose, just. Use a formal tone. Write it as a student. Make it sound like a human wrote it, not an AI. Aim for about 500 words.",
+   "topic": "world, UBI, single parent juggling shift work",
+   "style": {
+    "n_words": 326,
+    "paragraphs": 5,
+    "sent_len": 17.157894736842106,
+    "grade": 11.516302873748788,
+    "title": false,
+    "first_person": 0.0,
+    "first_person_count": 0,
+    "first_plural": 0.018404907975460124,
+    "second_person": 0.0,
+    "questions": 0,
+    "numbers": 0,
+    "contractions": 0.003067484662576687,
+    "headings": 0,
+    "list_items": 0,
+    "em_dashes": 2
+   },
+   "style_clauses": [
+    "Write about 350 words in 5 paragraphs.",
+    "Keep sentences around 17 words on average.",
+    "Write at about a grade 12 reading level.",
+    "Use 'we' and 'our' to address society as a group.",
+    "Use a few em dashes (\u2014) for asides."
+   ],
+   "prompt_v1": "Write an essay about world, UBI, single parent juggling shift work. Use a formal tone. Write it as a student. Make it sound like a human wrote it, not an AI. Aim for about 500 words.",
+   "prompt": "Write an essay about world, UBI, single parent juggling shift work. Write about 350 words in 5 paragraphs. Keep sentences around 17 words on average. Write at about a grade 12 reading level. Use 'we' and 'our' to address society as a group. Use a few em dashes (\u2014) for asides.",
    "unstyled": false
   }
  },
@@ -355,8 +451,8 @@
   "analysis": {
    "verdict": "AI",
    "p_ai": 1.0,
-   "p_ai_uncalibrated": 0.9999514818191528,
-   "band": 0.46017699115044247,
+   "p_ai_uncalibrated": 0.9999738931655884,
+   "band": 0.44974874371859297,
    "confidence": 1.0,
    "n_words": 190,
    "reasons": [
@@ -366,17 +462,8 @@
      "toward": "AI",
      "sentence": "The text uses a wider, more varied vocabulary.",
      "value": 240.04465116279067,
-     "median": 100.22417697191148,
-     "shap": 2.916260004043579
-    },
-    {
-     "feature": "word_len_mean",
-     "label": "word length",
-     "toward": "AI",
-     "sentence": "The text uses longer words on average.",
-     "value": 5.630208333333333,
-     "median": 4.7272727272727275,
-     "shap": 1.2806721925735474
+     "median": 98.70405401802378,
+     "shap": 2.5240750312805176
     },
     {
      "feature": "p_comma",
@@ -384,19 +471,33 @@
      "toward": "AI",
      "sentence": "The text uses many commas.",
      "value": 7.8125,
-     "median": 5.521472392638037,
-     "shap": 0.9915489554405212
+     "median": 5.610391124409816,
+     "shap": 1.3612886667251587
     },
     {
-     "feature": "flesch_ease",
-     "label": "readability",
+     "feature": "word_len_mean",
+     "label": "word length",
      "toward": "AI",
-     "sentence": "The text is harder to read.",
-     "value": 24.221959064327507,
-     "median": 53.204758158508184,
-     "shap": 0.582984447479248
+     "sentence": "The text uses longer words on average.",
+     "value": 5.630208333333333,
+     "median": 4.791233926805143,
+     "shap": 0.8405958414077759
+    },
+    {
+     "feature": "fw_to",
+     "label": "use of 'to'",
+     "toward": "AI",
+     "sentence": "It uses the word 'to' less often than typical.",
+     "value": 1.0416666666666665,
+     "median": 2.4691358024691357,
+     "shap": 0.49723020195961
     }
    ],
+   "scope": {
+    "p_out": 0.08344389420282022,
+    "threshold": 0.9369431278753696,
+    "out": false
+   },
    "settings": {
     "tone": {
      "value": "academic",
@@ -443,9 +544,35 @@
      }
     }
    },
-   "topic": "planetary, venus, planet, challenges",
    "topic_source": "keywords",
-   "prompt": "Write an essay about planetary, venus, planet, challenges. Use a academic tone. Write it as a student. Make it sound like a human wrote it, not an AI. Keep it to about 200 words.",
+   "topic": "Exploring Venus, space missions, Venus",
+   "style": {
+    "n_words": 188,
+    "paragraphs": 2,
+    "sent_len": 20.88888888888889,
+    "grade": 15.215177304964538,
+    "title": false,
+    "first_person": 0.0,
+    "first_person_count": 0,
+    "first_plural": 0.015957446808510637,
+    "second_person": 0.0,
+    "questions": 0,
+    "numbers": 1,
+    "contractions": 0.0,
+    "headings": 0,
+    "list_items": 0,
+    "em_dashes": 2
+   },
+   "style_clauses": [
+    "Write about 200 words in 2 paragraphs.",
+    "Keep sentences around 21 words on average.",
+    "Write at a university reading level.",
+    "Use 'we' and 'our' to address society as a group.",
+    "Use a few em dashes (\u2014) for asides.",
+    "Do not use contractions."
+   ],
+   "prompt_v1": "Write an essay about Exploring Venus, space missions, Venus. Use an academic tone. Write it as a student. Make it sound like a human wrote it, not an AI. Keep it to about 200 words.",
+   "prompt": "Write an essay about Exploring Venus, space missions, Venus. Write about 200 words in 2 paragraphs. Keep sentences around 21 words on average. Write at a university reading level. Use 'we' and 'our' to address society as a group. Use a few em dashes (\u2014) for asides. Do not use contractions.",
    "unstyled": false
   }
  }
