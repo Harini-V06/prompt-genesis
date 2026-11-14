@@ -178,12 +178,25 @@ def analyze(raw_text, models, topic_fn=None):
                              "all": {str(c): float(q) for c, q in zip(d["encoder"].classes_, pr)}}
         out["settings"] = settings
         topic = topic_fn(text) if topic_fn else None
+        if not topic:
+            from style_profile import noun_phrase_topic
+            topic = noun_phrase_topic(text)
+            out["topic_source"] = "keywords" if topic else "none"
+        else:
+            out["topic_source"] = "llm"
         out["topic"] = topic or keyword_topic(text)
-        out["topic_source"] = "llm" if topic else "keywords"
-        from verifier import build_prompt
+        from verifier import build_prompt, build_prompt_v2
+        from style_profile import measure, prompt_clauses
         # only settings the Detective is confident about go into the reconstructed prompt
         val = lambda k: settings[k]["value"] if k in settings and settings[k]["confident"] else None
-        out["prompt"] = build_prompt(out["topic"], val("tone"), val("persona"), val("evasion"), val("length"))
+        out["style"] = measure(raw_text)                 # COUNTED (raw text keeps paragraphs/headings)
+        out["style_clauses"] = prompt_clauses(out["style"])
+        out["prompt_v1"] = build_prompt(out["topic"], val("tone"), val("persona"), val("evasion"), val("length"))
+        # The rebuilt prompt uses ONLY measured information (topic + counted style). The Detective's tone/persona
+        # guesses are shown but kept OUT of the prompt: on real chatbot-app essays they were mostly wrong
+        # (RESULTS 13.1: tone 6/14, persona 5/14 for ChatGPT; 0/6 for Claude), and a wrong instruction pulls
+        # the rebuilt essay away from the original. Length is counted exactly instead of classified.
+        out["prompt"] = build_prompt_v2(out["topic"], None, None, out["style_clauses"])
         out["unstyled"] = val("tone") in (None, "unstyled") and val("persona") in (None, "unstyled")
     return out
 

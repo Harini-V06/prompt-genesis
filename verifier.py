@@ -109,7 +109,7 @@ def build_prompt(topic, tone=None, persona=None, evasion=None, length=None):
     """Readable reconstructed prompt; None / 'unstyled' settings are simply omitted."""
     parts = [f"Write an essay about {topic}."]
     if tone in ("formal", "casual", "academic"):
-        parts.append(f"Use a {tone} tone.")
+        parts.append(f"Use {'an' if tone[0] in 'aeiou' else 'a'} {tone} tone.")
     if persona == "student":
         parts.append("Write it as a student.")
     elif persona == "non-native speaker":
@@ -123,6 +123,15 @@ def build_prompt(topic, tone=None, persona=None, evasion=None, length=None):
     elif length == "elaborate":
         parts.append("Aim for about 500 words.")
     return " ".join(parts)
+
+
+def build_prompt_v2(topic, tone=None, persona=None, clauses=()):
+    """v2: topic + confidently-detected tone/persona (classifier) + COUNTED style clauses
+    (style_profile.prompt_clauses: length in words, paragraphs, sentence length, reading grade,
+    person, questions, numbers, contractions, headings). Evasion is dropped: the instruction often
+    does not change the text (reports/evasion_effect_by_generator.csv), so it cannot help a rebuild."""
+    p = build_prompt(topic, tone, persona).split(" ")
+    return " ".join(p) + (" " + " ".join(clauses) if clauses else "")
 
 
 def save_scaler():

@@ -75,8 +75,10 @@ class LLM:
         return lines + self.log[-n:]
 
     def topic(self, text):
-        out = self.chat("In 3 to 8 words, what is the topic of this essay? Reply with ONLY the topic phrase, "
-                        "no quotes, no full stop.\n\n" + text[:3000], max_tokens=40)
+        out = self.chat("What assignment topic was this essay written on? Phrase it the way it would appear in "
+                        "an essay assignment, in 4 to 14 words, e.g. 'whether homework should be banned in "
+                        "primary schools' or 'the impact of social media on teenagers' sleep'. Reply with ONLY "
+                        "the topic phrase, no quotes, no full stop.\n\n" + text[:3000], max_tokens=60)
         if not out:
             return None
         return out.strip().strip('"').strip("'").rstrip(".").splitlines()[0][:80]

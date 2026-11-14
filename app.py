@@ -19,14 +19,16 @@ sys.path.insert(0, str(ROOT))            # flat layout (all files in one folder)
 sys.path.insert(0, str(ROOT / "src"))
 ART = ROOT / "artifacts" if (ROOT / "artifacts").exists() else ROOT
 
-st.set_page_config(page_title="Prompt Genesis", page_icon="P", layout="wide")
+st.set_page_config(page_title="Prompt Genesis", page_icon="P", layout="wide", initial_sidebar_state="expanded")
 
 # ------------------------------------------------------------------ style
 st.markdown("""
 <style>
 :root { --bg:#000; --card:#0b0b0b; --line:#dc2626; --dim:rgba(220,38,38,.35); --txt:#fff; --mut:#a3a3a3; --red:#ef4444; }
 .stApp { background: var(--bg); color: var(--txt); }
-#MainMenu, footer, header[data-testid="stHeader"] { visibility: hidden; }
+#MainMenu, footer, [data-testid="stToolbarActions"], [data-testid="stDecoration"] { visibility: hidden; }
+header[data-testid="stHeader"] { background: transparent; }   /* keep it: it holds the open-sidebar arrow */
+[data-testid="stSidebarCollapsedControl"], [data-testid="stExpandSidebarButton"] { visibility: visible !important; }
 .block-container { padding-top: 1.6rem; max-width: 1150px; }
 [data-testid="stSidebar"] { background:#050505; border-right:1px solid var(--dim); }
 h1,h2,h3,h4,p,li,label,span { color: var(--txt); }
@@ -39,6 +41,8 @@ h1,h2,h3,h4,p,li,label,span { color: var(--txt); }
 .verdict.human { border-left-color:#fff; }
 .verdict.unsure { border-left-color:#737373; }
 .vt { font-size:1.6rem; font-weight:800; margin:0; }
+.vt.big { font-size:3rem; line-height:1.1; color:#dc2626; }
+textarea:disabled { color:#e5e5e5 !important; -webkit-text-fill-color:#e5e5e5 !important; opacity:1 !important; }
 .vs { color:var(--mut); margin:.2rem 0 0 0; }
 .gauge { position:relative; height:14px; border-radius:7px; margin:1rem 0 .3rem 0;
          background: linear-gradient(90deg,#fff 0%, #525252 50%, #dc2626 100%); }
@@ -175,21 +179,19 @@ def render_prompt(a):
     if "settings" not in a:
         return
     s = a["settings"]
-    name = {"tone": "tone", "persona": "persona", "evasion": "evasion", "length": "length"}
-    nice = lambda k, v: {"sound_human": "told to sound human", "none": "no evasion instruction"}.get(v, v) if k == "evasion" else v
-    badges = "".join(
-        f'<span{"" if d.get("confident", True) else " class=\'unsure\'"}><b>{name[k]}</b>{nice(k, d["value"])} '
-        f'<span class="small">({d["prob"]:.0%}{"" if d.get("confident", True) else ", uncertain: left out of prompt"})</span></span>'
-        for k, d in s.items())
-    src = "detected by the LLM" if a.get("topic_source") == "llm" else "keywords (add an API key for a better topic)"
-    note = ('<p class="small" style="margin-top:.7rem">No strong style instructions detected: this looks like a plain '
-            '"Write an essay about..." request (unstyled / default outcome).</p>') if a.get("unstyled") else ""
+    src = "detected by the LLM" if a.get("topic_source") == "llm" else "main noun phrases (add an API key for a better topic)"
+    measured = "".join(f"<li>{c}</li>" for c in a.get("style_clauses", []))
+    guesses = "".join(
+        f'<span class="unsure"><b>{k}</b>{d["value"]} <span class="small">({d["prob"]:.0%})</span></span>'
+        for k, d in s.items() if k in ("tone", "persona"))
     card("Reconstructed prompt",
-         f'<div class="prompt">{a["prompt"]}</div><div class="badges" style="margin-top:.7rem">{badges}'
-         f'<span><b>topic</b>{a["topic"]}</span></div><p class="small">Topic: {src}. Percentages are the Detective\'s '
-         f'confidence per setting. A setting is used only when its confidence passes a cut-off chosen on '
-         f'cross-validation (80% accuracy above it); greyed settings were left out. "Sound human" is the hardest: '
-         f'some models (e.g. Claude) do not change their writing for it at all.</p>{note}')
+         f'<div class="prompt">{a["prompt"]}</div>'
+         f'<p class="small" style="margin-top:.7rem"><b>Topic</b> ({src}): {a["topic"]}</p>'
+         f'<p class="small"><b>Measured from the text</b> (counted, not guessed):</p><ul class="small">{measured}</ul>'
+         f'<p class="small"><b>Style guesses</b> (classifier, NOT used in the prompt):</p><div class="badges">{guesses}</div>'
+         f'<p class="small">The guesses are about 85% accurate on essays made through AI APIs but mostly wrong on essays '
+         f'copied from chatbot apps such as ChatGPT, which add their own hidden instructions. So the prompt only uses '
+         f'what can be measured; the guesses are shown for context.</p>')
 
 
 def render_verify(r, original):
@@ -210,11 +212,20 @@ def render_verify(r, original):
                  f'<div class="tick" style="left:{pos(fl)}%"></div><div class="lab" style="left:{pos(fl)}%">floor {fl:.2f}</div>'
                  f'<div class="tick" style="left:{pos(ce)}%"></div><div class="lab" style="left:{pos(ce)}%">ceiling {ce:.2f}</div>'
                  f'<div class="you" style="left:calc({pos(m)}% - 2px)"></div></div>'
-                 f'<p class="small">Floor = a deliberately wrong prompt. Ceiling = the LLM matched against itself with the '
-                 f'same prompt. Position between them: <b>{r["position"]:.0%}</b>.</p>')
+                 f'<p class="small">Floor = rewrite from a deliberately WRONG prompt. Ceiling = two rewrites from the SAME '
+                 f'prompt compared with each other: an AI never writes the same essay twice, so this is as high as any '
+                 f'prompt can realistically score (even the true prompt averages about 0.57 in our tests).</p>')
     else:
         scale = ""
-    card("Match score", f'<p class="vt">{m:.2f}</p>{scale}{bars}')
+    p = r.get("position")
+    if p is not None:
+        verdict = ("very close to the best possible" if p >= .8 else "close" if p >= .5 else
+                   "partial match" if p >= .2 else "no better than a wrong prompt")
+        head = (f'<p class="vt big">{p:.0%}</p><p class="tag">of the way from a wrong prompt (0%) to the best an AI '
+                f'can match itself (100%): <b>{verdict}</b>. Raw Match Score {m:.2f}.</p>')
+    else:
+        head = f'<p class="vt">{m:.2f}</p><p class="small">Raw Match Score (the wrong-prompt control failed, so no scale).</p>'
+    card("How well the reconstructed prompt rebuilds the essay", f'{head}{scale}{bars}')
     cols = st.columns(2)
     with cols[0]:
         st.markdown("**Original**")
