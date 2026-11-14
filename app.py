@@ -131,6 +131,39 @@ textarea:disabled { color: var(--on-surface-variant) !important; -webkit-text-fi
 .stApp label p { font-size: 14px !important; font-weight: 500; color: var(--on-surface-variant) !important; }
 [data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p { color: var(--on-surface-variant) !important; font-size: 13px !important; }
 
+/* theme-proof: force the light look even if .streamlit/config.toml is dark or missing (Streamlit 1.66 test ids) */
+.stApp, [data-testid="stPopoverBody"] { color-scheme: light; }
+.stApp label p, [data-testid="stWidgetLabel"] p { color: #45474d !important; }
+[data-testid="stPopoverBody"] p { color: #121317; }
+[data-testid="stPopoverBody"] [data-testid="stCaptionContainer"] p { color: #45474d !important; }
+[data-testid="stTextAreaRootElement"], [data-testid="stTextInputRootElement"], [data-testid="stSelectbox"] [role="group"] {
+  background: #f8f9fc !important; border: 1px solid #2122261F !important; border-radius: 14px !important; box-shadow: none !important;
+  transition: border-color .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease); }
+[data-testid="stTextAreaRootElement"]:focus-within, [data-testid="stTextInputRootElement"]:focus-within,
+[data-testid="stSelectbox"] [role="group"]:focus-within {
+  border-color: #52b788 !important; box-shadow: 0 0 0 3px #52b78826 !important; background: #fff !important; }
+[data-testid="stTextAreaRootElement"] textarea, [data-testid="stTextInputField"], [data-testid="stSelectbox"] [role="group"] input,
+[data-testid="stSelectbox"] [role="group"] div, [data-testid="stSelectbox"] [role="group"] span {
+  background: transparent !important; color: #121317 !important; -webkit-text-fill-color: #121317; caret-color: #52b788; }
+[data-testid="stTextAreaRootElement"] textarea::placeholder, [data-testid="stTextInputField"]::placeholder {
+  color: #45474d99 !important; -webkit-text-fill-color: #45474d99 !important; }
+[data-testid="stTextAreaRootElement"] textarea { padding: 14px 16px !important; font-size: 16px; line-height: 24px; }
+[data-testid="stTextAreaRootElement"] textarea:disabled { color: #45474d !important; -webkit-text-fill-color: #45474d !important; opacity: 1 !important; }
+[data-testid="stTextInputRootElement"] button, [data-testid="stTextInputRootElement"] svg,
+[data-testid="stSelectbox"] svg { background: transparent !important; color: #45474d !important; fill: #45474d !important; }
+[data-testid="stSelectboxVirtualDropdown"] { background: #fff !important; border: 1px solid #2122261F; border-radius: 12px; }
+[data-testid="stSelectboxVirtualDropdown"] [role="option"] { color: #121317 !important; background: transparent !important; }
+[data-testid="stSelectboxVirtualDropdown"] [role="option"]:hover, [data-testid="stSelectboxVirtualDropdown"] [role="option"][aria-selected="true"] {
+  background: #f0f1f5 !important; }
+[data-testid="stCheckbox"] label > div:first-of-type, .stCheckbox label > div:first-of-type { background: #cdd4dc !important; }
+[data-testid="stCheckbox"] label:has(input:checked) > div:first-of-type, .stCheckbox label:has(input:checked) > div:first-of-type {
+  background: #121317 !important; }
+[data-testid="stCheckbox"] label > div:first-of-type > div, .stCheckbox label > div:first-of-type > div { background: #fff !important; }
+[data-testid="stTooltipIcon"] svg { color: #45474d !important; }
+[data-testid="stExpander"] summary, [data-testid="stExpander"] summary p { color: #121317 !important; }
+[data-testid="stSpinner"], [data-testid="stSpinner"] p { color: #45474d !important; }
+.stApp [data-testid="stCode"] pre, .stApp [data-testid="stCode"] code { background: #f8f9fc !important; color: #121317 !important; }
+
 /* tabs */
 [data-baseweb="tab-list"] { gap: 4px; }
 [data-baseweb="tab"] { font-size: 14.5px; color: var(--on-surface-variant); padding: 8px 4px !important; }
