@@ -89,7 +89,7 @@ header[data-testid="stHeader"], #MainMenu, footer, [data-testid="stDecoration"],
 .pg-chip .d { width: 6px; height: 6px; border-radius: 50%; background: var(--palette-blue-600); }
 
 /* segmented page nav */
-.st-key-topbar [data-testid="stButtonGroup"] { display: flex; justify-content: center; width: 100%; }
+.st-key-topbar [data-testid="stButtonGroup"] { display: flex; justify-content: center; width: 100%; align-items: center; }
 .st-key-topbar [data-testid="stButtonGroup"] [role="radiogroup"] { background: var(--palette-grey-15); border-radius: 9999px;
   padding: 4px; gap: 2px; flex-wrap: nowrap; width: fit-content; margin: 0 auto; }
 .st-key-topbar button[data-variant="segmented_control"] { border: none !important; border-radius: 9999px !important; margin: 0 !important;
