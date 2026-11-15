@@ -78,7 +78,7 @@ header[data-testid="stHeader"], #MainMenu, footer, [data-testid="stDecoration"],
   position: sticky; top: 12px; z-index: 999; }
 .st-key-topbar { position: relative; margin: 0 0 8px 0;
   background: #FFFFFFE6; backdrop-filter: blur(24px) saturate(1.6); -webkit-backdrop-filter: blur(20px) saturate(1.6);
-  border: 1px solid var(--outline-variant); border-radius: 9999px; padding: 8px 10px 8px 22px;
+  border: 1px solid var(--outline-variant); border-radius: 9999px; padding: 8px 8px 8px 16px;
   box-shadow: var(--sh-1); }
 .st-key-topbar [data-testid="stHorizontalBlock"] { gap: 8px; }
 .st-key-tb_right { align-items: flex-end; }
