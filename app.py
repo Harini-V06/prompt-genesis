@@ -82,14 +82,14 @@ header[data-testid="stHeader"], #MainMenu, footer, [data-testid="stDecoration"],
   box-shadow: var(--sh-1); }
 .st-key-topbar [data-testid="stHorizontalBlock"] { gap: 8px; }
 .st-key-tb_right { align-items: flex-end; }
-.pg-brand { display: flex; align-items: center; gap: 10px; margin: 0; white-space: nowrap; }
+.pg-brand { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0; white-space: nowrap; }
 .pg-word { font-size: 17.5px; font-weight: 500; letter-spacing: -0.01em; color: var(--on-surface); }
 .pg-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--on-surface-variant);
   background: var(--container-high); border-radius: 9999px; padding: 2px 10px; }
 .pg-chip .d { width: 6px; height: 6px; border-radius: 50%; background: var(--palette-blue-600); }
 
 /* segmented page nav */
-.st-key-topbar [data-testid="stButtonGroup"] { display: flex; justify-content: center; width: 100%; align-items: center; }
+.st-key-topbar [data-testid="stButtonGroup"] { display: flex; justify-content: center; width: 100%; }
 .st-key-topbar [data-testid="stButtonGroup"] [role="radiogroup"] { background: var(--palette-grey-15); border-radius: 9999px;
   padding: 4px; gap: 2px; flex-wrap: nowrap; width: fit-content; margin: 0 auto; }
 .st-key-topbar button[data-variant="segmented_control"] { border: none !important; border-radius: 9999px !important; margin: 0 !important;
