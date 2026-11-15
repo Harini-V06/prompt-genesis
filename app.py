@@ -82,7 +82,7 @@ header[data-testid="stHeader"], #MainMenu, footer, [data-testid="stDecoration"],
   box-shadow: var(--sh-1); }
 .st-key-topbar [data-testid="stHorizontalBlock"] { gap: 8px; }
 .st-key-tb_right { align-items: flex-end; }
-.pg-brand { display: flex; align-items: center; gap: 10px; margin: 0; white-space: nowrap; }
+.pg-brand { display: flex; align-items: center; align-self: center; gap: 10px; margin: 0; white-space: nowrap; }
 .pg-word { font-size: 17.5px; font-weight: 500; letter-spacing: -0.01em; color: var(--on-surface); }
 .pg-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--on-surface-variant);
   background: var(--container-high); border-radius: 9999px; padding: 2px 10px; }
