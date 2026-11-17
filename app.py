@@ -78,12 +78,11 @@ header[data-testid="stHeader"], #MainMenu, footer, [data-testid="stDecoration"],
   position: sticky; top: 12px; z-index: 999; }
 .st-key-topbar { position: relative; margin: 0 0 8px 0;
   background: #FFFFFFE6; backdrop-filter: blur(24px) saturate(1.6); -webkit-backdrop-filter: blur(20px) saturate(1.6);
-  border: 1px solid var(--outline-variant); border-radius: 9999px; padding: 8px 8px 8px 16px;
+  border: 1px solid var(--outline-variant); border-radius: 9999px; padding: 8px 10px 8px 22px;
   box-shadow: var(--sh-1); }
 .st-key-topbar [data-testid="stHorizontalBlock"] { gap: 8px; }
 .st-key-tb_right { align-items: flex-end; }
-.pg-brand { display: flex; align-items: center; gap: 10px; margin: 0; flex-wrap: nowrap; }
-*:has(> .pg-brand) {margin: 0;}
+.pg-brand { display: flex; align-items: center; gap: 10px; margin: 0; white-space: nowrap; }
 .pg-word { font-size: 17.5px; font-weight: 500; letter-spacing: -0.01em; color: var(--on-surface); }
 .pg-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--on-surface-variant);
   background: var(--container-high); border-radius: 9999px; padding: 2px 10px; }
@@ -622,8 +621,7 @@ if page == "Detect & Reconstruct":
                     render_reasons(a)
                 if a["verdict"] == "AI":
                     note("A verdict is evidence, not proof. In our tests the model wrongly and confidently called "
-                         "<b>0 of 60</b> held-out university essays AI, but about <b>5%</b> of human texts in harder "
-                         "groups (non-native students' essays; adult writing that passed the scope check). Treat an AI "
+                         "<b>0 of 60</b> held-out university essays AI, but no detector is perfect. Treat an AI "
                          "verdict as a reason to talk to the writer, never as proof.", "warn")
                     with st.container(key="verify_panel"):
                         md('<div class="pg-card-h"><span>Next step</span></div>'
@@ -682,7 +680,7 @@ else:
     tiles((('01', 'Guard', 'Gradient-boosted trees on writing-style features (sentence rhythm, vocabulary, punctuation, '
             'syntax) and frozen GPT-2 / DistilGPT-2 predictability features (perplexity, token rank, Binoculars-style '
             'ratio). Probabilities are isotonic-calibrated; inside an uncertainty band it abstains.'),
-           ('02', 'Detective', 'One classifier per prompt setting (tone, persona, evasion, length), trained on essays '
+           ('02', 'Detective', 'One classifier per prompt setting (tone, persona, length), trained on essays '
             'whose prompts are known.'),
            ('03', 'Verifier', 'Regenerates the essay from the reconstructed prompt and scores Words, Structure and Ideas '
             'between a wrong-prompt floor and a self-consistency ceiling.'),
