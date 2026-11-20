@@ -1,5 +1,9 @@
 # Prompt Genesis
 
+**🔗 Live demo: https://promptgenesis.streamlit.app** · [Results](RESULTS.md) · [Dataset card](docs/DATASET_CARD_generated.md)
+
+ **Scope:** student essays. Verdicts are probabilistic, not proof. Non-native writers are still flagged more often than native writers (see RESULTS.md §10 and §12.8).
+ 
 Detects whether an essay was written by AI, reconstructs the prompt that most likely produced it,
 and verifies the reconstruction by regenerating the essay and measuring how close it comes.
 Classical ML + statistics + interpretability only: gradient-boosted trees and logistic regression
